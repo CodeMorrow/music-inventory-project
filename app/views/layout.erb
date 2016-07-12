@@ -8,7 +8,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
 
-    <title>Bollywood Bechdel</title>
+    <title>Music Database</title>
   </head>
 
 <body>
@@ -16,27 +16,7 @@
 <nav>
   <div class="container">
     <ul>
-      <li>
-        <a href="/results/list">Bechdel Gallery</a>
-      </li>
-
-      <% if @current_user == nil %>
-      	<li class="active">
-          <a href="/users/new">Create account</a>
-        </li>
-
-        <li class="active">
-          <a href="/login`">Log in</a>
-        </li>
-      <% else %>
-       	<li class="active">
-       		<a href="/users/<%= @current_user.id %>/view">Profile</a>
-       	</li>
-
-       	<li>
-       		<a href="/logout">Logout</a>
-       	</li>
-      <% end %>
+      
     </ul>
   </div>
 </nav>
@@ -59,31 +39,10 @@
 <div>
   <div class="container">
     <p>
-      Find a Bollywood movie with <strong>strong</strong> female characters.
+      Music Database
     </p>
 
-    <form action="/movies/search" method="post">
-      <select name="search_category">
-        <option selected disabled>Choose category</option>
-        <option value= "title">Title</option>
-        <option value= "director">Director</option>
-      </select>
-
-      <input type="text" name="search" placeholder="search for a movie">
-
-      <div>
-        <label>
-          <input type="checkbox" name="passes_bechdel" value="1">
-          Passes Bechdel Test
-        </label>
-      </div>
-
-      <div>
-        <button>
-          Search
-        </button>
-      </div>
-    </form>
+    
   </div>
 </div>
 
