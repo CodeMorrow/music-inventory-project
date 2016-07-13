@@ -15,3 +15,13 @@ class Song
 end
 
 
+
+song = Song.new("title","artist","album","genre","length","rating")
+songfile = song.songinfo
+
+
+
+# Function adds the string being passed through the songfile variable into the 
+def songAdd2File(songfile)
+	File.open('music_db.txt', 'a') {|z| z.puts "#{songfile}" }
+end

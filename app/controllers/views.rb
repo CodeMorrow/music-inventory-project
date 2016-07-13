@@ -5,11 +5,7 @@ MyApp.get "/"  do
 end
 
 MyApp.get "/songs"  do
-	    # binding.pry
-
-	# Call method to open and parse the 
-    @music_file = File.read("music_db.txt","||")
-    # @music_file.close
+	# binding.pry
     erb :"/songs"
 end
 
