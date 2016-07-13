@@ -1,0 +1,2 @@
+Artist||Album Title||Genre||Release Year||Song||Length||Song Rating||Album Rating
+General Fuzz||Soulful Filling||Electronic||2009||Eye Heart Knot||4:00||9||7
