@@ -1,3 +1,6 @@
+#Class that takes query string params. songinfo will return a string of song information, delineated by pipes
+#that can be written to a file.
+
 class Song
 	def initialize(title,artist,album,genre,minute,second,rating)
 		@title = title
@@ -13,11 +16,6 @@ class Song
 		return "#{@title}||#{@artist}||#{@album}||#{@genre}||#{@lengthmin}||#{@lengthsec}||#{@rating}"
 	end
 end
-
-
-
-song = Song.new("title","artist","album","genre","length","rating")
-songfile = song.songinfo
 
 
 
