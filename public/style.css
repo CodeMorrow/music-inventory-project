@@ -17,9 +17,30 @@
 
 .contentContainer {
 	display: flex;
-	justify-content: space-around;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
 	border: solid 1px gray;
 	min-height: 93vh;
+	padding: 10px;
+}
+
+/* -------------------- Add Item CSS -------------------- */
+
+.addItem {
+	flex:1;
+}
+
+/* -------------------- Add Item CSS -------------------- */
+
+.nav {
+	display: flex;
+	justify-content: center;
+	flex: 2;
+}
+
+.nav__item {
+	padding: 0 5px;
 }
 
 /* -------------------- Search CSS -------------------- */
@@ -27,6 +48,8 @@
 .search {
 	display: flex;
 	align-items: center;
+	flex: 1;
+	justify-content: flex-end;
 }
 
 .search::-webkit-input-placeholder {
@@ -38,7 +61,17 @@
 	width: 24px;
 }
 
-/* -------------------- Add Song Form CSS -------------------- */
+/* -------------------- Add Form CSS -------------------- */
+.form{
+	margin-top: 20px;
+	padding: 5px;
+	background-color: lightblue;
+	border: solid 1px gray;
+}
+
+.form__item {
+	margin: 5px 0;
+}
 
 .rating {
     overflow: hidden;
@@ -69,6 +102,8 @@
     background: url('http://kubyshkin.ru/samples/star-rating/star.png') 0 -16px;
 }
 
-.formItem {
-	margin: 5px 0;
-}
+/* -------------------------- Add Album Page CSS ---------------*/
+
+.albumQuestion {
+	margin: 25px;
+} 

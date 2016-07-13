@@ -1,18 +1,18 @@
-<div class="nav">
-        <a href= "/add_song">Add Songs</a>
-        <a href= "/add_album">Add Albums</a>
-        <a href= "/add_artist">Add Artists</a>
-    </div>
+<div class="addNav">
+        <a class="nav__item" href= "/add_song">Add Songs</a>
+        <a class="nav__item" href= "/add_album">Add Albums</a>
+        <a class="nav__item" href= "/add_artist">Add Artists</a>
+</div>
 
-<form>
-	Song Title:
-	<input class="formItem" type="text" name="song"><br>
+<form class="form">
+	Song:
+	<input class="form__item" type="text" name="song"><br>
 	Artist:
-	<input class="formItem" type="text" name="artist"><br>
+	<input class="form__item" type="text" name="artist"><br>
 	Album:
-	<input class="formItem" type="text" name="album"><br>
+	<input class="form__item" type="text" name="album"><br>
 	Genre:
-	<select class="formItem">
+	<select class="form__item">
 		<option value="blues">Blues</option>
 		<option value="classical">Classical</option>
 		<option value="country">Country</option>
@@ -23,13 +23,13 @@
 		<option value="pop">Pop</option>
 		<option value="rock">Rock</option>
 	</select><br>
-	<div class="formItem">Track Length</div>
+	<div class="form__item">Track Length</div>
 	Minutes:
-	<input class="formItem" type="text" name="minutes"><br>
+	<input class="form__item" type="text" name="minutes"><br>
 	Seconds:
-	<input class="formItem" type="text" name="seconds"><br>
+	<input class="form__item" type="text" name="seconds"><br>
 	Rating:
-	<span class="rating formItem">
+	<span class="rating form__item">
 	    <input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-5">
 	    <label for="rating-input-1-5" class="rating-star"></label>
 	    <input type="radio" class="rating-input" id="rating-input-1-4" name="rating-input-4">
@@ -41,6 +41,6 @@
 	    <input type="radio" class="rating-input" id="rating-input-1-1" name="rating-input-1">
 	    <label for="rating-input-1-1" class="rating-star"></label>
 	</span><br>
-	<div class="formItem">* All Fields Must Be Completed</div>
-	<input class="formItem" type="submit" name="submit">
+	<div class="form__item">* All Fields Must Be Completed</div>
+	<input class="form__item" type="submit" name="submit">
 </form>
