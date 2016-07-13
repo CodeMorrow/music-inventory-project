@@ -1,18 +1,17 @@
 class Song
-	def initialize(title,artist,album,genre,length,rating)
+	def initialize(title,artist,album,genre,minute,second,rating)
 		@title = title
 		@artist = artist
 		@album = album
 		@genre = genre
-		@length = length
+		@lengthmin = minute
+		@lengthsec = second
 		@rating = rating
 	end
 
 	def songinfo
-		return "#{@title}||#{@artist}||#{@album}||#{@genre}||#{@length}||#{@rating}"
+		return "#{@title}||#{@artist}||#{@album}||#{@genre}||#{@lengthmin}||#{@lengthsec}||#{@rating}"
 	end
 end
 
 
-song = Song.new("title","artist","album","genre","length","rating")
-songfile = song.songinfo

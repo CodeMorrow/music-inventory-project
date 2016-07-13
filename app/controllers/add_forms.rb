@@ -10,18 +10,21 @@ MyApp.get "/add_artist" do
 	erb :"add_forms/add_artist"
 end
 
+# MyApp.get "/add_song" do
+# 	erb :"add_forms/add_song"
+# end
+
 MyApp.get "/add_song" do
-	erb :"add_forms/add_song"
-end
+	@titleParam = params[:titleParam]
+	@artistParam = params[:artistParam]
+	@albumParam = params[:albumParam]
+	@genreParam = params[:genreParam]
+	@minuteParam = params[:minuteParam]
+	@secondParam = params[:secondParam]
+	@ratingParam = params[:ratingParam]
 
-MyApp.post "/add_song" do
-	titleParam = params[:song]
-	artistParam = params[:artist]
-	albumParam = params[:album]
-	genreParam = params[:genre]
-	minuteParam = params[:minute]
-	secondParam = params[:second]
-	ratingParam = params[:rating]
+	@song = Song.new(@titleParam,@artistParam,@albumParam,@genreParam,@minuteParam,@secondParam,@ratingParam)
+	songinfo = @song.songinfo
 
-	rb :add, :global => {'titleParam' => titleParam, 'artistParam' => artistParam, 'artistParam' => albumParam, 'genreParam' => genreParam, 'minuteParam' => minuteParam, 'secondParam' => secondParam, 'ratingParam' => ratingParam}
+	erb :"add_forms/add_song", :locals => {'songinfo' => songinfo}
 end
