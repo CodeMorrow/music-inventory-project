@@ -33,7 +33,7 @@
 
 /* -------------------- Add Item CSS -------------------- */
 
-.nav{
+.nav {
 	display: flex;
 	justify-content: center;
 	flex: 2;
@@ -61,7 +61,7 @@
 	width: 24px;
 }
 
-/* -------------------- Add Song Form CSS -------------------- */
+/* -------------------- Add Form CSS -------------------- */
 .form{
 	margin-top: 20px;
 	padding: 5px;
@@ -101,3 +101,9 @@
     height: 16px;
     background: url('http://kubyshkin.ru/samples/star-rating/star.png') 0 -16px;
 }
+
+/* -------------------------- Add Album Page CSS ---------------*/
+
+.albumQuestion {
+	margin: 25px;
+} 
