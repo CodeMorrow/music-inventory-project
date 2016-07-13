@@ -1,0 +1,43 @@
+/* -------------------- Site Layout -------------------- */
+
+.mainContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.topContainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 60px;
+	border: solid 1px gray;
+	padding: 0 25px;
+}
+
+.contentContainer {
+	display: flex;
+	justify-content: space-around;
+	border: solid 1px gray;
+	min-height: 93vh;
+}
+
+/* -------------------- Search CSS -------------------- */
+
+.header__search {
+	display: flex;
+	align-items: center;
+}
+
+.search{
+
+}
+
+.search::-webkit-input-placeholder {
+	font-style: italic;
+	font-weight: lighter;
+}
+
+.search__image {
+	width: 24px;
+}

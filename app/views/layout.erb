@@ -7,20 +7,25 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
     <title>Music Database</title>
   </head>
 
-<body>
-<h1>Hello, World!</h1>
-<nav>
-  <div class="container">
+<body class="mainContainer">
+<nav class="topContainer">
+  <div class="nav">
     <ul>
       <a href= "/songs">Songs</a>
       <a href= "/albums">Albums</a>
       <a href= "/artists">Artists</a>
     </ul>
   </div>
+
+  <div class="header__search">
+    <input class="search" type="text" name="search" placeholder="Search music..."><img class="search__image" src="images/search.png" alt="search">
+  </div>
+
 </nav>
 
 <% if @error != nil %>
@@ -36,12 +41,14 @@
 
 <!-- The `yield` below is where the contents of a view file are put. -->
 <!-- Then the combined layout + view is sent back to the client. -->
-<%= yield %>
+<div class="contentContainer">
+  <%= yield %>
+</div>
 
 <div>
-  <div class="container">
+  <div class="bottomContainer">
     <p>
-      Music Database
+      Footer. Not Sure we need anything down here.
     </p>
 
     
