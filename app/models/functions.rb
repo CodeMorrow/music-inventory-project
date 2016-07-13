@@ -1,10 +1,4 @@
-# @song_title
-# @album_title
-# @artist_name
-# @song_length
-# @album_rating
-# @song_rating
-# @genre
+
 
 
 
@@ -13,7 +7,7 @@ def createFileWithHeader
   if File.exist?("music_db.txt")
   else
   open('music_db.txt', 'w') { |z|
-  z << "Artist||Album Title||Genre||Release Year||Song||Length||Song Rating||Album Rating\n"
+  z << "Artist||Album Title||Genre||Release Year||Song||Minutes||Seconds||Song Rating||Album Rating\n"
   }
   end 
 end
@@ -39,11 +33,11 @@ end
 @tbl_header = 
   "<thead><tr>
   <th>Artist</th> <th>Album Title</th> <th>Genre</th>  <th>Release Yr</th> 
-  <th>Song</th>  <th>Length</th> <th>Song Rating</th> <th>Album Rating</th> 
+  <th>Song</th>  <th>Minutes</th> <th>Seconds</th> <th>Song Rating</th> <th>Album Rating</th> 
   </tr></thead>
   <tbody>"
 
-def createHtmlTbl(@grouped, @tbl_header)
+def createHtmlTbl(grouped, tbl_header)
   table = grouped.map do |portion|
 
     "<table>\n" << tbl_header << "\n<tr>" << portion.map do |column|

@@ -6,6 +6,7 @@ end
 
 MyApp.get "/songs"  do
 	# binding.pry
+	songAdd2File(songfile)
     erb :"/songs"
 end
 

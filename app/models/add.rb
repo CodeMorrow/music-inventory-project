@@ -16,7 +16,7 @@ end
 
 
 
-song = Song.new("title","artist","album","genre","length","rating")
+song = Song.new("title","artist","album","genre","lengthmin","lengthsec","rating")
 songfile = song.songinfo
 
 
