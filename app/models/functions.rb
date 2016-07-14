@@ -1,3 +1,5 @@
+
+
 class Song
   def initialize(title,artist,album,genre,minute,second,songrating,albumrating)
     @title = title
