@@ -47,12 +47,13 @@ end
 # Assign variable to hold array created from file.
 @x = createFileArray()
 
-# Create variable that has the music_db file 
-@x_no_h = @x.drop(1)
+if !@x.nil?
+  # Create variable that has the music_db file 
+  @x_no_h = @x.drop(1)
 
-# Create groupings by each array element. 
-@grouped = @x_no_h.group_by{|z| z[0]}.values
-
+  # Create groupings by each array element. 
+  @grouped = @x_no_h.group_by{|z| z[0]}.values
+end
 
 # Explicit html string for table header
 @tbl_header = 
