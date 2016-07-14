@@ -13,6 +13,7 @@
 	height: 60px;
 	border: solid 1px gray;
 	padding: 0 25px;
+	background-color: lightgray;
 }
 
 .contentContainer {
@@ -31,6 +32,13 @@
 	flex:1;
 }
 
+.addItem__button{
+	padding: 5px;
+	border: solid 1px gray;
+	border-radius: 5px;
+	background-color: white;
+}
+
 /* -------------------- Add Item CSS -------------------- */
 
 .nav {
@@ -40,7 +48,11 @@
 }
 
 .nav__item {
-	padding: 0 5px;
+	margin: 5px;
+	padding: 5px;
+	border: solid 1px gray;
+	border-radius: 5px;
+	background-color: white;
 }
 
 /* -------------------- Search CSS -------------------- */
@@ -130,3 +142,4 @@
     height: 16px;
     background: url('http://kubyshkin.ru/samples/star-rating/star.png') 0 -16px;
 }
+
