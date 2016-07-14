@@ -2,18 +2,19 @@
 #that can be written to a file.
 
 class Song
-  def initialize(title,artist,album,genre,minute,second,rating)
+  def initialize(title,artist,album,genre,minute,second,songrating,albumrating)
     @title = title
     @artist = artist
     @album = album
     @genre = genre
     @lengthmin = minute
     @lengthsec = second
-    @rating = rating
+    @songrating = songrating
+    @albumrating = albumrating
   end
 
   def songinfo
-    return "#{@title}||#{@artist}||#{@album}||#{@genre}||#{@lengthmin}||#{@lengthsec}||#{@rating}"
+    return "#{@title}||#{@artist}||#{@album}||#{@genre}||#{@lengthmin}||#{@lengthsec}||#{@songrating}||#{@albumrating}"
   end
 end
 
@@ -73,7 +74,9 @@ end
   </tr></thead>
   <tbody>"
 
-def createHtmlTbl(grouped,tbl_header)
+
+def createHtmlTbl(grouped, tbl_header)
+
   table = grouped.map do |portion|
 
     "<table>\n" << tbl_header << "\n<tr>" << portion.map do |column|
