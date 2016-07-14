@@ -43,7 +43,7 @@ end
   </tr></thead>
   <tbody>"
 
-def createHtmlTbl(@grouped, @tbl_header)
+def createHtmlTbl(grouped, tbl_header)
   table = grouped.map do |portion|
 
     "<table>\n" << tbl_header << "\n<tr>" << portion.map do |column|
