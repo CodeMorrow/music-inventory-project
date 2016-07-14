@@ -38,7 +38,6 @@ end
 MyApp.get "/add_song" do
 	createFileWithHeader
 
-
 	@titleParam = params[:titleParam]
 	@artistParam = params[:artistParam]
 	@albumParam = params[:albumParam]
