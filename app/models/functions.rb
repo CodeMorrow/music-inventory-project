@@ -1,23 +1,3 @@
-# TODO - Move into its own file.
-class Song
-  def initialize(title,artist,album,genre,minute,second,songrating,albumrating)
-    @title = title #.split.map { |i| i.capitalize }.join(' ')
-    @artist = artist #.split.map { |i| i.capitalize }.join(' ')
-    @album = album #.split.map { |i| i.capitalize }.join(' ')
-    @genre = genre
-    @lengthmin = minute
-    @lengthsec = second
-    @songrating = songrating
-    @albumrating = albumrating
-  end
-
-
-  def songinfo
-      return "#{@title}||#{@artist}||#{@album}||#{@genre}||#{@lengthmin}||#{@lengthsec}||#{@songrating}||#{@albumrating}"
-  end
-end
-
-
 # Function adds the string being passed through the songfile variable into the 
 def songAdd2File(songfile)
   File.open('music_db.txt', 'a') {|z| z.puts "#{songfile}" }
@@ -38,24 +18,26 @@ end
 
 
 # Create an array of each line in the file as a variable.
+# Create variable that has the music_db info, minus header
+# Create groupings by each array element.
+
 def createFileArray
-  if File.exist?("music_db.txt")
-    y = File.foreach('music_db.txt').map { |line| line.split("||") }
-    z = y.uniq! #De-duping the output from the file. 
-  end
-  return z 
+  z = File.foreach('music_db.txt').map { |line| line.split("||") }
+  z_no_h = z.drop(1)
+  grouped = z.group_by{|x| x[0]}.values
+  return grouped 
 end
 
-# Assign variable to hold array created from file.
-@x = createFileArray()
+# # Assign variable to hold array created from file.
+# @x = createFileArray()
 
-if !@x.nil?
-  # Create variable that has the music_db file 
-  @x_no_h = @x.drop(1)
+# if !@x.nil?
+#   # Create variable that has the music_db file 
+#   @x_no_h = @x.drop(1)
 
-  # Create groupings by each array element. 
-  @grouped = @x_no_h.group_by{|z| z[0]}.values
-end
+#   # Create groupings by each array element. 
+#   @grouped = @x_no_h.group_by{|z| z[0]}.values
+# end
 
 # TODO ---------------- Everything below this line should be
 #                       handled in the view.
