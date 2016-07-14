@@ -73,13 +73,13 @@
 	margin: 5px 0;
 }
 
-.rating {
+.songrating {
     overflow: hidden;
     display: inline-block;
     font-size: 0;
     position: relative;
 }
-.rating-input {
+.songrating-input {
     float: right;
     width: 16px;
     height: 16px;
@@ -87,13 +87,13 @@
     margin: 0 0 0 -16px;
     opacity: 0;
 }
-.rating:hover .rating-star:hover,
-.rating:hover .rating-star:hover ~ .rating-star,
-.rating-input:checked ~ .rating-star {
+.songrating:hover .songrating-star:hover,
+.songrating:hover .songrating-star:hover ~ .songrating-star,
+.songrating-input:checked ~ .songrating-star {
     background-position: 0 0;
 }
-.rating-star,
-.rating:hover .rating-star {
+.songrating-star,
+.songrating:hover .songrating-star {
     position: relative;
     float: right;
     display: block;
@@ -102,6 +102,34 @@
     background: url('http://kubyshkin.ru/samples/star-rating/star.png') 0 -16px;
 }
 
+.albumrating {
+    overflow: hidden;
+    display: inline-block;
+    font-size: 0;
+    position: relative;
+}
+.albumrating-input {
+    float: right;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    margin: 0 0 0 -16px;
+    opacity: 0;
+}
+.albumrating:hover .albumrating-star:hover,
+.albumrating:hover .albumrating-star:hover ~ .albumrating-star,
+.albumrating-input:checked ~ .albumrating-star {
+    background-position: 0 0;
+}
+.albumrating-star,
+.albumrating:hover .songrating-star {
+    position: relative;
+    float: right;
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url('http://kubyshkin.ru/samples/star-rating/star.png') 0 -16px;
+}
 /* -------------------------- Add Album Page CSS ---------------*/
 
 .albumQuestion {

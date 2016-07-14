@@ -2,7 +2,7 @@
 #that can be written to a file.
 
 class Song
-  def initialize(title,artist,album,genre,minute,second,rating)
+  def initialize(title,artist,album,genre,minute,second,songrating,albumrating)
     @title = title
     @artist = artist
     @album = album
