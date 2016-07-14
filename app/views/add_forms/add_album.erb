@@ -4,7 +4,7 @@
 </div>
 
 <form class="albumQuestion">
-	How many songs are on this album?
+	<div>How many songs are on this album?</div>
 	<input type="number" name="$quantity" min="1" max="200" required>
 	<input class="formItem" type="submit" name="submit">
 </form>
@@ -54,11 +54,7 @@
 		<%= 
 			$i=0
 			while $i < $quantity do
- 				puts '<input class="form__item" type="text" name="titleParam" required><br>
- 				Minutes:
-				<input class="form__item" type="number" min="0" max="99" name="minuteParam" required><br>
-				Seconds:
-				<input class="form__item" type="number" min="0" max="59" name="secondParam" required><br>'
+ 				puts '<input class="form__item" type="text" name="titleParam" required><br>'
  				$i +=1
 			end 
 		%>
