@@ -23,10 +23,13 @@
 
   <!-- TODO - Indentation! -->
 	<div class="form__item">Track Length</div>
-	Minutes:
+	
+    Minutes:
 	<input class="form__item" type="number" min="0" max="99" name="minuteParam" required><br>
-	Seconds:
+	
+    Seconds:
 	<input class="form__item" type="number" min="0" max="59" name="secondParam" required><br>
+
 	Song Rating:
 	<span class="songrating" name="ratingParamS">
         <input type="radio" class="songrating-input" value="5"
@@ -48,7 +51,7 @@
 
   <!-- TODO - BEMify. -->
 
-	Album Rating
+	Album Rating:
 	<span class="albumrating" name="ratingParamA">
         <input type="radio" class="albumrating-input" value="5"
         		id="albumrating-input-1-5" name="ratingParamA"/>
@@ -66,7 +69,8 @@
                 id="albumrating-input-1-1" name="ratingParamA"/>
         <label for="albumrating-input-1-1" class="albumrating-star"></label>
 	</span><br>
-	<input class="form__item" type="submit" name="submit">
+	
+    <input class="form__item" type="submit" name="submit">
 </form>
 
 <%= songinfo %>
