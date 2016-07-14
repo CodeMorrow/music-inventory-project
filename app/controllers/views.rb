@@ -4,26 +4,21 @@ MyApp.get "/"  do
 	erb :"/home"
 end
 
-MyApp.get "/songs"  do
-	# binding.pry
+MyApp.get "/songs" do
 	@songstr = songinfo()
 	songAdd2File(songstr)
-    erb :"/songs"
+  erb :"/songs"
 end
 
-MyApp.get "/albums"  do
+MyApp.get "/albums" do
 	erb :"/albums"
 end
 
-MyApp.get "/artists"  do
+MyApp.get "/artists" do
 	erb :"/artists"
 end
 
 # ---- Controls for add forms below ----
-
-# MyApp.get "/add_song" do
-# 	erb :"add_forms/add_song"
-# end
 
 MyApp.get "/add_song" do
 	
@@ -42,6 +37,7 @@ MyApp.get "/add_song" do
 	
 	songinfo = @song.songinfo
 	
+	# TODO - Figure out why != doesn't work.
 	if songinfo == "||||||||||||||"
 	else
 		songAdd2File(songinfo)
