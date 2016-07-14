@@ -1,5 +1,3 @@
-
-
 class Song
   def initialize(title,artist,album,genre,minute,second,songrating,albumrating)
     @title = title
@@ -14,7 +12,7 @@ class Song
 
 
   def songinfo
-    return "#{@title}||#{@artist}||#{@album}||#{@genre}||#{@lengthmin}||#{@lengthsec}||#{@songrating}||#{@albumrating}"
+      return "#{@title}||#{@artist}||#{@album}||#{@genre}||#{@lengthmin}||#{@lengthsec}||#{@songrating}||#{@albumrating}"
   end
 end
 
@@ -31,7 +29,7 @@ def createFileWithHeader
   if File.exist?("music_db.txt")
   else
   open('music_db.txt', 'w') { |z|
-  z << "Artist||Album Title||Genre||Release Year||Song||Minutes||Seconds||Song Rating||Album Rating\n"
+    z << "Title||Artist||Album||Genre||Minutes||Seconds||Song Rating||Album Rating\n"
   }
   end 
 end
@@ -40,7 +38,8 @@ end
 # Create an array of each line in the file as a variable.
 def createFileArray
   if File.exist?("music_db.txt")
-    z = File.foreach('music_db.txt').map { |line| line.split("||") } 
+    y = File.foreach('music_db.txt').map { |line| line.split("||") }
+    z = y.uniq! #De-duping the output from the file. 
   end
   return z 
 end
@@ -57,10 +56,12 @@ end
 
 # Explicit html string for table header
 @tbl_header = 
-  "<thead><tr>
-  <th>Artist</th> <th>Album Title</th> <th>Genre</th>  <th>Release Yr</th> 
-  <th>Song</th>  <th>Minutes</th> <th>Seconds</th> <th>Song Rating</th> <th>Album Rating</th> 
-  </tr></thead>
+  "<thead>
+    <tr>
+    <th>Title</th>   <th>Artist</th>    <th>Album</th>        <th>Genre</th>
+    <th>Minutes</th>  <th>Seconds</th>  <th>Song Rating</th>  <th>Album Rating</th> 
+    </tr>
+  </thead>
   <tbody>"
 
 
