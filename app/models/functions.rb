@@ -49,7 +49,9 @@ end
 
 # Create an array of each line in the file as a variable.
 def createFileArray
-  z = File.foreach('music_db.txt').map { |line| line.split("||") } 
+  if File.exist?("music_db.txt")
+    z = File.foreach('music_db.txt').map { |line| line.split("||") } 
+  end
   return z 
 end
 

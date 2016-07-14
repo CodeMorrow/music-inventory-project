@@ -36,6 +36,9 @@ end
 # end
 
 MyApp.get "/add_song" do
+	createFileWithHeader
+
+
 	@titleParam = params[:titleParam]
 	@artistParam = params[:artistParam]
 	@albumParam = params[:albumParam]
@@ -46,6 +49,8 @@ MyApp.get "/add_song" do
 
 	@song = Song.new(@titleParam,@artistParam,@albumParam,@genreParam,@minuteParam,@secondParam,@ratingParam)
 	songinfo = @song.songinfo
+
+	songAdd2File(songinfo)
 
 	erb :"add_forms/add_song", :locals => {'songinfo' => songinfo}
 end
