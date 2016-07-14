@@ -14,7 +14,7 @@ class Song
   end
 
   def songinfo
-    return "#{@title}||#{@artist}||#{@album}||#{@genre}||#{@lengthmin}||#{@lengthsec}||#{@songrating}||#{@albumrating}"
+      return "#{@title}||#{@artist}||#{@album}||#{@genre}||#{@lengthmin}||#{@lengthsec}||#{@songrating}||#{@albumrating}"
   end
 end
 
@@ -39,11 +39,10 @@ end
 
 # If file exists, do nothing. Otherwise, create the music_db file with the first row being headers.
 def createFileWithHeader 
-  if File.exist?("music_db.txt")
-  else
-  open('music_db.txt', 'w') { |z|
-  z << "Artist||Album Title||Genre||Release Year||Song||Length||Song Rating||Album Rating\n"
-  }
+  if !File.exist?("music_db.txt")
+    open('music_db.txt', 'w') { |z|
+      z << "Artist||Album Title||Genre||Release Year||Song||Length||Song Rating||Album Rating\n"
+    }
   end 
 end
 
