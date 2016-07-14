@@ -45,9 +45,10 @@ MyApp.get "/add_song" do
 	@genreParam = params[:genreParam]
 	@minuteParam = params[:minuteParam]
 	@secondParam = params[:secondParam]
-	@ratingParam = params[:ratingParam]
+	@ratingParamS = params[:ratingParamS]
+	@ratingParamA = params[:ratingParamA]
 
-	@song = Song.new(@titleParam,@artistParam,@albumParam,@genreParam,@minuteParam,@secondParam,@ratingParam)
+	@song = Song.new(@titleParam,@artistParam,@albumParam,@genreParam,@minuteParam,@secondParam,@ratingParamS,@ratingParamA)
 	songinfo = @song.songinfo
 
 	songAdd2File(songinfo)

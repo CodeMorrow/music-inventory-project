@@ -9,11 +9,12 @@ class Song
     @genre = genre
     @lengthmin = minute
     @lengthsec = second
-    @rating = rating
+    @songrating = songrating
+    @albumrating = albumrating
   end
 
   def songinfo
-    return "#{@title}||#{@artist}||#{@album}||#{@genre}||#{@lengthmin}||#{@lengthsec}||#{@rating}"
+    return "#{@title}||#{@artist}||#{@album}||#{@genre}||#{@lengthmin}||#{@lengthsec}||#{@songrating}||#{@albumrating}"
   end
 end
 
