@@ -1,8 +1,9 @@
+# TODO - Move into its own file.
 class Song
   def initialize(title,artist,album,genre,minute,second,songrating,albumrating)
-    @title = title.split.map { |i| i.capitalize }.join(' ')
-    @artist = artist.split.map { |i| i.capitalize }.join(' ')
-    @album = album.split.map { |i| i.capitalize }.join(' ')
+    @title = title #.split.map { |i| i.capitalize }.join(' ')
+    @artist = artist #.split.map { |i| i.capitalize }.join(' ')
+    @album = album #.split.map { |i| i.capitalize }.join(' ')
     @genre = genre
     @lengthmin = minute
     @lengthsec = second
@@ -26,6 +27,7 @@ end
 
 # If file exists, do nothing. Otherwise, create the music_db file with the first row being headers.
 def createFileWithHeader 
+  # TODO - See about using !File.exist?("music_db.txt")
   if File.exist?("music_db.txt")
   else
   open('music_db.txt', 'w') { |z|
@@ -47,12 +49,16 @@ end
 # Assign variable to hold array created from file.
 @x = createFileArray()
 
-# Create variable that has the music_db file 
-@x_no_h = @x.drop(1)
+if !@x.nil?
+  # Create variable that has the music_db file 
+  @x_no_h = @x.drop(1)
 
-# Create groupings by each array element. 
-@grouped = @x_no_h.group_by{|z| z[0]}.values
+  # Create groupings by each array element. 
+  @grouped = @x_no_h.group_by{|z| z[0]}.values
+end
 
+# TODO ---------------- Everything below this line should be
+#                       handled in the view.
 
 # Explicit html string for table header
 @tbl_header = 

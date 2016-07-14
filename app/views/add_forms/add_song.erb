@@ -1,10 +1,13 @@
 <form class="form">
 	Song:
 	<input class="form__item" type="text" name="titleParam" required><br>
+
 	Artist:
 	<input class="form__item" type="text" name="artistParam" required><br>
+
 	Album:
 	<input class="form__item" type="text" name="albumParam" required=""><br>
+
 	Genre:
 	<select class="form__item" name="genreParam">
 		<option value="blues">Blues</option>
@@ -17,6 +20,8 @@
 		<option value="pop">Pop</option>
 		<option value="rock">Rock</option>
 	</select><br>
+
+  <!-- TODO - Indentation! -->
 	<div class="form__item">Track Length</div>
 	Minutes:
 	<input class="form__item" type="number" min="0" max="99" name="minuteParam" required><br>
@@ -40,6 +45,9 @@
                 id="songrating-input-1-1" name="ratingParamS"/>
         <label for="songrating-input-1-1" class="songrating-star"></label>
 	</span><br>
+
+  <!-- TODO - BEMify. -->
+
 	Album Rating
 	<span class="albumrating" name="ratingParamA">
         <input type="radio" class="albumrating-input" value="5"
