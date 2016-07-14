@@ -1,8 +1,8 @@
 class Song
   def initialize(title,artist,album,genre,minute,second,songrating,albumrating)
-    @title = title.split.map { |i| i.capitalize }.join(' ')
-    @artist = artist.split.map { |i| i.capitalize }.join(' ')
-    @album = album.split.map { |i| i.capitalize }.join(' ')
+    @title = title #.split.map { |i| i.capitalize }.join(' ')
+    @artist = artist #.split.map { |i| i.capitalize }.join(' ')
+    @album = album #.split.map { |i| i.capitalize }.join(' ')
     @genre = genre
     @lengthmin = minute
     @lengthsec = second
