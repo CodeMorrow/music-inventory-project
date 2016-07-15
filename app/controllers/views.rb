@@ -5,26 +5,23 @@ MyApp.get "/"  do
 end
 
 MyApp.get "/songs" do
-	@x = createFileArray()
+	if !File.exists?("music_db.txt")
+		createFileWithHeader
+	end
 
-	# @tbl_header = "<thead><tr>
- #    <th>Title</th>   <th>Artist</th>    <th>Album</th>        <th>Genre</th>
- #    <th>Minutes</th>  <th>Seconds</th>  <th>Song Rating</th>  <th>Album Rating</th> 
- #    </tr></thead><tbody>"
-	
-	# # binding.pry
-	# if File.exist?("music_db.txt")
-	#   table = @x.map do |portion|
-	# 	    "<table>\n" << @tbl_header << "\n<tr>" << portion.map do |column|
-	# 	      "<td>" << column.map do |element|
-	# 	        element.to_s
-	# 	      end.join("</td><td>") << "</td>"
-	# 	    end.join("</tr>\n<tr>") << "</tr>\n</tbody>\n</table>\n"
-	# 	  end.join("\n")
-	#    table
-	# end
+	@grouped_n = createFileArray()
+	@tbl_header = "<thead><tr><th>Artist</th><th>Album Title</th><th>Genre</th><th>Song</th><th>Minutes</th><th>Seconds</th><th>Song Rating</th><th>Album Rating</th></tr></thead><tbody>"
 
-  erb :"/songs" #, :locals => {:table => params[:table]}
+	@table2 = @grouped_n.map do |portion|
+	"<table>\n" << @tbl_header << "\n<tr>" << portion.map do |column|
+	  "<td>" << column.map do |element|
+	    element.to_s
+	  end.join("</td><td>") << "</td>"
+	end.join("</tr>\n<tr>") << "</tr>\n</tbody>\n</table>\n"
+	end.join("\n")
+
+	# puts @table
+  erb :"/songs"
 end
 
 

@@ -7,7 +7,7 @@
 
 
   # If file exists, do nothing. Otherwise, create the music_db file with the first row being headers.
-  def createFileWithHeader 
+  def createFileWithHeader
     # TODO - See about using !File.exist?("music_db.txt")
     if File.exist?("music_db.txt")
     else
@@ -22,7 +22,7 @@
   # Create an array of each line in the file as a variable.
   def createFileArray
       y = File.foreach("music_db.txt").map { |line| line.split("||") }
-      # y_no_h = y.drop(1)
+      y_no_h = y.drop(1)
       grouped = y.group_by{|x| x[0]}.values
       return grouped 
     # end

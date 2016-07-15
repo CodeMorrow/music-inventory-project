@@ -15,6 +15,6 @@ class Song
     @title = @title.split.map { |i| i.capitalize }.join(' ')
     @album = @album.split.map { |i| i.capitalize }.join(' ')
     @artist = @artist.split.map { |i| i.capitalize }.join(' ')
-    return "#{@title}||#{@artist}||#{@album}||#{@genre}||#{@lengthmin}||#{@lengthsec}||#{@songrating}||#{@albumrating}"
+    return "#{@title}||#{@artist}||#{@album}||#{@genre}||#{@lengthmin}||#{@lengthsec}||#{@songrating}||#{@albumrating}\n"
   end
 end
