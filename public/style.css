@@ -252,10 +252,34 @@
     background: url('http://kubyshkin.ru/samples/star-rating/star.png') 0 -16px;
 }
 
+
+
 .submit {
 	background-color: white;
 }
 
 .submit:hover {
 	border-color: white;
+}
+
+/* -------------------- Song List CSS -------------------- */
+
+.table, .table__header, .table__data {
+    border: 2px solid gray;
+    text-align: center;
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+	
+}
+
+.table__header {
+	height: 30px;
+	background-color: lightgray;
+}
+
+.table__data {
+	padding: 2px;
 }
