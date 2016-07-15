@@ -23,7 +23,7 @@
      return grouped 
    # end
  end
->>>>>>> 523d56dbcf3b26a805c4668d8b330b50e6bd1dff
+ 
 
 def searchresult(search)
   @filearray = createfilearray()
