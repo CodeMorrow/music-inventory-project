@@ -1,5 +1,3 @@
-
-
  # Function adds the string being passed through the songfile variable into the 
  def songAdd2File(songfile)
    File.open('music_db.txt', 'a') {|z| z.puts "#{songfile}" }
@@ -25,6 +23,7 @@
      return grouped 
    # end
  end
+ 
 
 # def searchResult(search, filearray)
 #   @searchresults = Array.new
@@ -74,7 +73,7 @@ def deleteResultToFile(allbutdeleted)
   end
   File.open('music_db.txt', 'w') do |z| 
     @arraytofile.each do |line|
-      z.puts line 
+      z.puts line
     end
   end
 end
