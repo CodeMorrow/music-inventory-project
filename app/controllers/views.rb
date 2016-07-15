@@ -4,6 +4,10 @@ MyApp.get "/"  do
 	erb :"/home"
 end
 
+
+
+
+
 MyApp.get "/songs" do
 
 
@@ -13,13 +17,34 @@ MyApp.get "/songs" do
 end
 
 
+
+
 MyApp.get "/albums" do
 	erb :"/albums"
 end
 
+
+
+
 MyApp.get "/artists" do
 	erb :"/artists"
 end
+
+
+
+
+MyApp.post "/artists" do
+	@artistsearch = params[:artistSearchParam]
+	@arraytosearch = arrayToSearch()
+
+	searchresult = searchResult(@artistsearch,@arraytosearch)
+
+	erb :"/searchresults", :locals => {'searchresult' => searchresult}
+
+end
+
+
+
 
 # ---- Controls for add forms below ----
 

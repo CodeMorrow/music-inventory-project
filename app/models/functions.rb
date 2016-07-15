@@ -25,13 +25,58 @@
  end
  
 
-def searchresult(search)
-  @filearray = createfilearray()
-  @searchresults = Array.new
-  @filearray.each do |x|
+# def searchResult(search, filearray)
+#   @searchresults = Array.new
+#   filearray.each do |x|
+#     if x.include?(search)
+#       @searchresults.push(x)
+#     end
+#   end
+#   return @searchresults
+# end
+
+def arrayToSearch
+  arraytosearch = Array.new
+  File.foreach("music_db.txt").each do |x|
+    x = x.split("||")
+    arraytosearch.push(x)
+  end
+  return arraytosearch
+end
+  
+
+def searchResult(search,arraytosearch)
+  searchresults = Array.new
+  arraytosearch.each do |x|
     if x.include?(search)
-      @searchresult.push(x)
+      searchresults.push(x)
     end
   end
-  return @searchresults
+  return searchresults
 end
+
+def allButDeleted(search,arraytosearch)
+  searchresults = Array.new
+  arraytosearch.each do |x|
+    unless x.include?(search)
+      searchresults.push(x)
+    end
+  end
+  return searchresults
+end
+
+def deleteResultToFile(allButDeleted)
+  @arraytofile = Array.new
+  allButDeleted.each do |x|
+    x = x.join("||")
+    @arraytofile.push(x)
+  end
+  File.open('music_db.txt', 'w') { |z| 
+    @arraytofile.each do |line|
+      z.puts line }
+    end
+  end
+end
+
+
+
