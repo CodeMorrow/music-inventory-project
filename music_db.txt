@@ -1,8 +1,1 @@
-Love is All||Gungor||One Wild Life Spirit||rock||8||9||5||5
-Since I've Been Loving You||Led Zeppelin||Uhh ?||rock||8||43||5||5
-l||l||l||blues||0||0||2||2
-ll||ll||l||blues||8||8||||
-ll||ll||l||blues||8||8||||
-ll||ll||l||blues||8||8||||
-r||r||r||blues||3||3||||
-r||r||r||blues||3||3||||
+Title||Artist||Album||Genre||Minutes||Seconds||Song Rating||Album Rating
