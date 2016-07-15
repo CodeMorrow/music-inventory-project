@@ -19,11 +19,11 @@
 
       <div class="editItems">
         <div class="addItem">
-            <a title="Add Song" class="addItem__button" href= "/add_song" alt="add song">+</a>
+            <a title="Add Song" class="addItem__button" href= "/add_song" alt="add song"><img class="addItem__icon" src="images/add.png"></a>
         </div>
 
         <div class="deleteItem">
-            <a title="Delete Song(s)" class="deleteItem__button" href= "/add_song" alt="delete song(s)"><img class="deleteItem__icon" src="images/trash.png"></a>
+            <a title="Delete Song(s)" class="deleteItem__button" href= "/delete_song" alt="delete song(s)"><img class="deleteItem__icon" src="images/trash.png"></a>
         </div>
       </div>
       
@@ -34,8 +34,10 @@
       </div>
 
       <div class="searchItem">
+        <form class="searchForm" action="/albums" method="post">
           <input class="searchItem__box" type="text" name="artistSearchParam" placeholder="Search Music">
-          <input class="searchItem_button" type="image" src="images/search.png" border="0" alt="search">
+          <input class="searchItem_button" type="image" src="images/search_white.png" border="0" alt="search">
+        </form>
       </div>
 
   </nav>
