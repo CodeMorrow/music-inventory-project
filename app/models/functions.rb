@@ -37,44 +37,44 @@
 # end
 
 def arrayToSearch
-  arraytosearch = Array.new
+  @arraytosearch = Array.new
   File.foreach("music_db.txt").each do |x|
     x = x.split("||")
-    arraytosearch.push(x)
+    @arraytosearch.push(x)
   end
-  return arraytosearch
+  return @arraytosearch
 end
   
 
 def searchResult(search,arraytosearch)
-  searchresults = Array.new
+  @searchresults = Array.new
   arraytosearch.each do |x|
     if x.include?(search)
-      searchresults.push(x)
+      @searchresults.push(x)
     end
   end
-  return searchresults
+  return @searchresults
 end
 
-def allButDeleted(search,arraytosearch)
-  searchresults = Array.new
+def allButDeleted(delete,arraytosearch)
+  @deletesearchresults = Array.new
   arraytosearch.each do |x|
-    unless x.include?(search)
-      searchresults.push(x)
+    if !x.include?(delete)
+      @deletesearchresults.push(x)
     end
   end
-  return searchresults
+  return @deletesearchresults
 end
 
-def deleteResultToFile(allButDeleted)
+def deleteResultToFile(allbutdeleted)
   @arraytofile = Array.new
-  allButDeleted.each do |x|
+  allbutdeleted.each do |x|
     x = x.join("||")
     @arraytofile.push(x)
   end
-  File.open('music_db.txt', 'w') { |z| 
+  File.open('music_db.txt', 'w') do |z| 
     @arraytofile.each do |line|
-      z.puts line }
+      z.puts line 
     end
   end
 end
