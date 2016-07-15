@@ -43,6 +43,22 @@ MyApp.post "/artists" do
 end
 
 
+MyApp.get "/delete" do
+	erb :"/delete_song"
+end
+
+
+MyApp.post "/delete" do
+	@delete = params[:deleteParam]
+	@arraytosearch = arrayToSearch()
+
+	searchresult = searchResult(@artistsearch,@arraytosearch)
+
+	erb :"/searchresults", :locals => {'searchresult' => searchresult}
+
+end
+
+
 
 
 # ---- Controls for add forms below ----
