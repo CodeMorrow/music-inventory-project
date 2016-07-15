@@ -55,3 +55,29 @@ def searchResult(search,arraytosearch)
   end
   return searchresults
 end
+
+def allButDeleted(search,arraytosearch)
+  searchresults = Array.new
+  arraytosearch.each do |x|
+    unless x.include?(search)
+      searchresults.push(x)
+    end
+  end
+  return searchresults
+end
+
+def deleteResultToFile(allButDeleted)
+  @arraytofile = Array.new
+  allButDeleted.each do |x|
+    x = x.join("||")
+    @arraytofile.push(x)
+  end
+  File.open('music_db.txt', 'w') { |z| 
+    @arraytofile.each do |line|
+      z.puts line }
+    end
+  end
+end
+
+
+
