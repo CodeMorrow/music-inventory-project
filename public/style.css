@@ -161,26 +161,36 @@
 /* -------------------- Add Form CSS -------------------- */
 .form{
 	margin-top: 20px;
-	padding: 5px;
+	padding: 10px 25px;
 	background-color: lightgray;
 	border: solid 5px darkgray;
 	border-radius: 25px;
 	box-shadow: 5px 5px 5px #888888;
-	font-size: 12px;
+	font-size: 18px;
 }
 
 .form__item {
-	margin: 5px 0;
+	margin: 10px 0;
 	border-radius: 20px;
 	padding-left: 10px;
+	font-size: 18px;
 }
 
 .form__item:focus{
 	outline: none;
 }
 
-.time {
-	margin-left: 15px;
+.minute {
+	margin: -5px 0 -20px 15px;
+}
+
+.second {
+	margin: 10px 0 10px 15px;
+}
+
+.genre {
+	background-color: white;
+	margin-bottom: 20px;
 }
 
 .songrating {
@@ -217,6 +227,7 @@
     display: inline-block;
     font-size: 0;
     position: relative;
+    margin-top: 20px;
 }
 .albumrating-input {
     float: right;
