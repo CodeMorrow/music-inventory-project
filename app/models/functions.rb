@@ -71,9 +71,9 @@ def deleteResultToFile(allButDeleted)
     x = x.join("||")
     @arraytofile.push(x)
   end
-  File.open('music_db.txt', 'w') { |z| 
+  File.open('music_db.txt', 'w') do |z| 
     @arraytofile.each do |line|
-      z.puts line }
+      z.puts line 
     end
   end
 end

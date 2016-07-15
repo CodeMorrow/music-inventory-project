@@ -49,7 +49,7 @@ MyApp.get "/delete" do
 end
 
 
-MyApp.post "/delete" do
+MyApp.post "/delete_song" do
 	@delete = params[:deleteParam]
 	@arraytosearch = arrayToSearch()
 
