@@ -144,6 +144,10 @@
 	border: solid 1px gray;
 }
 
+.deleteItem__icon {
+	width: 16px;
+}
+
 /* -------------------- Add Form CSS -------------------- */
 .form{
 	margin-top: 20px;
