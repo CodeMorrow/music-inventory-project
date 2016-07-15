@@ -18,12 +18,15 @@ Songs
 	if File.exist?("music_db.txt")
 	  table = @x.map do |portion|
 		    "<table>\n" << @tbl_header << "\n<tr>" << portion.map do |column|
+		      
 		      "<td>" << column.map do |element|
 		        element.to_s
 		      end.join("</td><td>") << "</td>"
 		    end.join("</tr>\n<tr>") << "</tr>\n</tbody>\n</table>\n"
 		  end.join("\n")
-	   puts table
+	   return table
 	end
 
  %>
+
+ 

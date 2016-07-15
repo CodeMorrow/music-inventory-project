@@ -65,6 +65,8 @@ end
 
 MyApp.get "/add_song" do
 
+	createFileWithHeader
+
 	erb :"add_forms/add_song"
 
 end
