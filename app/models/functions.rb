@@ -26,3 +26,13 @@
    # end
  end
 
+def searchresult(search)
+  @filearray = createfilearray()
+  @searchresults = Array.new
+  @filearray.each do |x|
+    if x.include?(search)
+      @searchresult.push(x)
+    end
+  end
+  return @searchresults
+end

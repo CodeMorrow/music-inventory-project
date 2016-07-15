@@ -43,7 +43,9 @@ MyApp.post "/add_song" do
 		songAdd2File(songinfo)
 	end
 
-	erb :"/songs"
+	x = createFileArray()
+
+  	erb :"/songs", :locals => {'x' => x}
 
 end
 
