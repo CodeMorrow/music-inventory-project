@@ -1,19 +1,19 @@
 # TODO - Move into its own file.
 class Song
-  def initialize(title,artist,album,genre,minute,second,songrating,albumrating)
+  def initialize(title,artist,album,genre,minute,second,rateSong,albumrating)
     @title = title #.split.map { |i| i.capitalize }.join(' ')
     @artist = artist #.split.map { |i| i.capitalize }.join(' ')
     @album = album #.split.map { |i| i.capitalize }.join(' ')
     @genre = genre
     @lengthmin = minute
     @lengthsec = second
-    @songrating = songrating
+    @rateSong = rateSong
     @albumrating = albumrating
   end
 
 
   def songinfo
-      return "#{@title}||#{@artist}||#{@album}||#{@genre}||#{@lengthmin}||#{@lengthsec}||#{@songrating}||#{@albumrating}"
+      return "#{@title}||#{@artist}||#{@album}||#{@genre}||#{@lengthmin}||#{@lengthsec}||#{@rateSong}||#{@albumrating}"
   end
 end
 

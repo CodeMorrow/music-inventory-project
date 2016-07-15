@@ -34,10 +34,10 @@ MyApp.post "/add_song" do
 	@genreParam = params[:genreParam]
 	@minuteParam = params[:minuteParam]
 	@secondParam = params[:secondParam]
-	@ratingParamS = params[:ratingParamS]
-	@ratingParamA = params[:ratingParamA]
+	@rateSongParam = params[:rateSongParam]
+	@rateAlbumParam = params[:rateAlbumParam]
 
-	@song = Song.new(@titleParam,@artistParam,@albumParam,@genreParam,@minuteParam,@secondParam,@ratingParamS,@ratingParamA)
+	@song = Song.new(@titleParam,@artistParam,@albumParam,@genreParam,@minuteParam,@secondParam,@rateSongParam,@rateAlbumParam)
 	
 	songinfo = @song.songinfo
 	
