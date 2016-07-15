@@ -5,16 +5,28 @@ MyApp.get "/"  do
 end
 
 MyApp.get "/songs" do
-	@songstr = songinfo()
-	songAdd2File(songstr)
-  erb :"/songs"
+	@x = createFileArray()
+
+	# @tbl_header = "<thead><tr>
+ #    <th>Title</th>   <th>Artist</th>    <th>Album</th>        <th>Genre</th>
+ #    <th>Minutes</th>  <th>Seconds</th>  <th>Song Rating</th>  <th>Album Rating</th> 
+ #    </tr></thead><tbody>"
+	
+	# # binding.pry
+	# if File.exist?("music_db.txt")
+	#   table = @x.map do |portion|
+	# 	    "<table>\n" << @tbl_header << "\n<tr>" << portion.map do |column|
+	# 	      "<td>" << column.map do |element|
+	# 	        element.to_s
+	# 	      end.join("</td><td>") << "</td>"
+	# 	    end.join("</tr>\n<tr>") << "</tr>\n</tbody>\n</table>\n"
+	# 	  end.join("\n")
+	#    table
+	# end
+
+  erb :"/songs" #, :locals => {:table => params[:table]}
 end
 
-MyApp.get "/last_song" do
-	@songstr = songinfo()
-	songAdd2File(songstr)
-  erb :"/songs"
-end
 
 MyApp.get "/albums" do
 	erb :"/albums"

@@ -4,6 +4,9 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	box-shadow:  2px 2px 5px #888888;
+	border-radius: 20px;
+	font-family: "Helvetica"
 }
 
 .topContainer {
@@ -11,7 +14,7 @@
 	justify-content: space-between;
 	align-items: center;
 	height: 60px;
-	border: solid 1px gray;
+	border: solid 3px gray;
 	padding: 0 25px;
 	background: linear-gradient(gray, darkgray, gray);
 	border-radius: 20px 20px 0 0;
@@ -22,9 +25,16 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
-	border: solid 1px gray;
-	min-height: 93vh;
+	border: solid 3px gray;
+	border-radius: 0 0 20px 20px;
+	min-height: 85vh;
 	padding: 10px;
+}
+
+/* -------------------- Homepage CSS -------------------- */
+
+.homeContent {
+	font-size: 12px;
 }
 
 /* -------------------- Add Item CSS -------------------- */
@@ -144,6 +154,10 @@
 	border: solid 1px gray;
 }
 
+.deleteItem__icon {
+	width: 16px;
+}
+
 /* -------------------- Add Form CSS -------------------- */
 .form{
 	margin-top: 20px;
@@ -152,11 +166,19 @@
 	border: solid 5px darkgray;
 	border-radius: 25px;
 	box-shadow: 5px 5px 5px #888888;
+	font-size: 12px;
 }
 
 .form__item {
 	margin: 5px 0;
+	border-radius: 20px;
+	padding-left: 10px;
 }
+
+.form__item:focus{
+	outline: none;
+}
+
 .time {
 	margin-left: 15px;
 }
@@ -219,3 +241,10 @@
     background: url('http://kubyshkin.ru/samples/star-rating/star.png') 0 -16px;
 }
 
+.submit {
+	background-color: white;
+}
+
+.submit:hover {
+	border-color: white;
+}
