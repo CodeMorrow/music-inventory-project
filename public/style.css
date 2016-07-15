@@ -185,7 +185,7 @@
 }
 
 .second {
-	margin: 10px 0 5px 15px;
+	margin: 10px 0 10px 15px;
 }
 
 .genre {
@@ -227,6 +227,7 @@
     display: inline-block;
     font-size: 0;
     position: relative;
+    margin-top: 20px;
 }
 .albumrating-input {
     float: right;
