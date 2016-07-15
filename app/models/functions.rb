@@ -73,7 +73,7 @@ def deleteResultToFile(allButDeleted)
   end
   File.open('music_db.txt', 'w') do |z| 
     @arraytofile.each do |line|
-      z.puts line 
+      z.puts line
     end
   end
 end

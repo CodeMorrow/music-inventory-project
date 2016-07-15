@@ -46,14 +46,58 @@
 
 }
 
+.addItem {
+	display: flex;
+	justify-content: center;
+}
+
+.addItem__button {
+	padding: 5px;
+}
+.addItem__button:link{
+	border: solid 1px gray;
+	border-radius: 5px;
+	background-color: white;
+	box-shadow: 2px 2px 5px #888888;
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+}
+
+.addItem__button:visited{
+	border: solid 1px gray;
+	border-radius: 5px;
+	background-color: white;
+	box-shadow: 2px 2px 5px #888888;
+	text-decoration: none;
+	color: black;
+}
+
+.addItem__button:hover {
+	border: solid 1px white;
+}
+
+.addItem__button:active {
+	background-color: lightgray;
+	color: black;
+	box-shadow: inset 2px 2px 5px #888888;
+	border: solid 1px gray;
+}
+
+.addItem__icon {
+	width: 16px;
+}
+
 .deleteItem {
 	display: flex;
 	justify-content: center;
 	margin-left: 20px;
 }
 
+.deleteItem__button {
+	padding: 5px;
+}
 .deleteItem__button:link{
-	padding: 2px 8px;
 	border: solid 1px gray;
 	border-radius: 5px;
 	background-color: white;
@@ -64,7 +108,6 @@
 }
 
 .deleteItem__button:visited{
-	padding: 5px;
 	border: solid 1px gray;
 	border-radius: 5px;
 	background-color: white;
@@ -88,39 +131,6 @@
 	width: 16px;
 }
 
-/* -------------------- Add Item CSS -------------------- */
-
-.addItem__button:link{
-	padding: 2px 6px;
-	border: solid 1px gray;
-	border-radius: 5px;
-	background-color: white;
-	box-shadow: 2px 2px 5px #888888;
-	text-decoration: none;
-	color: black;
-	font-weight: bold;
-}
-
-.addItem__button:visited{
-	padding: 5px;
-	border: solid 1px gray;
-	border-radius: 5px;
-	background-color: white;
-	box-shadow: 5px 5px 5px black;
-	text-decoration: none;
-	color: black;
-}
-
-.addItem__button:hover {
-	border: solid 1px white;
-}
-
-.addItem__button:active {
-	background-color: lightgray;
-	color: black;
-	box-shadow: inset 2px 2px 5px #888888;
-	border: solid 1px gray;
-}
 /* -------------------- Nav CSS -------------------- */
 
 .nav {
@@ -162,11 +172,25 @@
 }
 
 /* -------------------- Search CSS -------------------- */
+.searchItem {
+	display: flex;
+	flex: 1;
+	justify-content: flex-end;
+}
+
+.searchForm {
+	display: flex;
+	border-radius: 25px;
+	align-content: center;
+}
 
 .searchItem__box {
 	border-radius: 20px;
 	font-size: 16px;
 	padding-left: 10px;
+}
+.searchItem__box:focus {
+	outline: none;
 }
 
 .searchItem__button {
@@ -174,8 +198,12 @@
 	width: 16px;
 }
 
+.searchItem__button:focus {
+	outline: none;
+}
+
 /* -------------------- Add Form CSS -------------------- */
-.form{
+.form {
 	margin-top: 20px;
 	padding: 10px 25px;
 	background-color: lightgray;
