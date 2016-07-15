@@ -17,8 +17,14 @@
 
   <nav class="topContainer">
 
-    <div class="addItem">
-          <a title="Add Song" class="addItem__button" href= "/add_song" alt="add song">+</a>
+      <div class="editItems">
+        <div class="addItem">
+            <a title="Add Song" class="addItem__button" href= "/add_song" alt="add song">+</a>
+        </div>
+
+        <div class="deleteItem">
+            <a title="Delete Song(s)" class="deleteItem__button" href= "/add_song" alt="delete song(s)"><img class="deleteItem__icon" src="images/trash.png"></a>
+        </div>
       </div>
       
       <div class="nav">
@@ -27,8 +33,9 @@
           <a class="nav__item" href= "/artists">Artists</a>
       </div>
 
-      <div class="deleteItem">
-          <a title="Delete Song(s)" class="deleteItem__button" href= "/delete_song" alt="delete song(s)"><img class= "deleteItem__icon" src="images/trash.png"></a>
+      <div class="searchItem">
+          <input class="searchItem__box" type="text" name="artistSearchParam" placeholder="Search Music">
+          <input class="searchItem_button" type="image" src="images/search.png" border="0" alt="search">
       </div>
 
   </nav>
