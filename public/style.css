@@ -53,6 +53,7 @@
 
 .addItem__button {
 	padding: 5px;
+	height: 16px;
 }
 .addItem__button:link{
 	border: solid 1px gray;
@@ -96,6 +97,7 @@
 
 .deleteItem__button {
 	padding: 5px;
+	height: 16px;
 }
 .deleteItem__button:link{
 	border: solid 1px gray;
