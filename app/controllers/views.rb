@@ -5,6 +5,7 @@ MyApp.get "/"  do
 end
 
 MyApp.get "/songs" do
+<<<<<<< HEAD
 	if !File.exists?("music_db.txt")
 		createFileWithHeader
 	end
@@ -22,6 +23,12 @@ MyApp.get "/songs" do
 
 	# puts @table
   erb :"/songs"
+=======
+
+	x = createFileArray()
+
+  erb :"/songs", :locals => {'x' => x}
+>>>>>>> 523d56dbcf3b26a805c4668d8b330b50e6bd1dff
 end
 
 

@@ -1,7 +1,65 @@
 <h2>Song Listing:</h2>
 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Album</th>
+    <th>Artist</th>
+    <th>Genre</th>
+    <th>Minutes</th>
+    <th>Seconds</th>
+    <th>Song Rating</th>
+    <th>Album Rating</th>
+  </tr>
+  <% x.each do |l|
+      l.each do |title,album,artist,genre,minutes,seconds,songrating,albumrating| %>
+  <tr>
+  	<td><%= title %></td>
+  	<td><%= album %></td>
+  	<td><%= artist %></td>
+  	<td><%= genre %></td>
+  	<td><%= minutes %></td>
+  	<td><%= seconds %></td>
+  	<td><%= songrating %></td>
+  	<td><%= albumrating %></td>
+   </tr>
+   <% end %>
+   <% end %>
+</table>
+
+
+
+
+
+
+
+
+
 
 <!-- Added the below code for table rendering -->
+<<<<<<< HEAD
+=======
+ <% #= table 
+
+
+	# @tbl_header = "<thead><tr>
+ #    <th>Title</th>   <th>Artist</th>    <th>Album</th>        <th>Genre</th>
+ #    <th>Minutes</th>  <th>Seconds</th>  <th>Song Rating</th>  <th>Album Rating</th> 
+ #    </tr></thead><tbody>"
+	
+	# # binding.pry
+	# if File.exist?("music_db.txt")
+	#   table = @x.map do |portion|
+	# 	    "<table>\n" << @tbl_header << "\n<tr>" << portion.map do |column|
+		      
+	# 	      "<td>" << column.map do |element|
+	# 	        element.to_s
+	# 	      end.join("</td><td>") << "</td>"
+	# 	    end.join("</tr>\n<tr>") << "</tr>\n</tbody>\n</table>\n"
+	# 	  end.join("\n")
+	#    return table
+	# end
+>>>>>>> 523d56dbcf3b26a805c4668d8b330b50e6bd1dff
 
 
 <%= @table2%>
