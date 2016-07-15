@@ -6,6 +6,7 @@
 	justify-content: center;
 	box-shadow:  2px 2px 5px #888888;
 	border-radius: 20px;
+	font-family: "Helvetica"
 }
 
 .topContainer {
@@ -159,6 +160,7 @@
 	border: solid 5px darkgray;
 	border-radius: 25px;
 	box-shadow: 5px 5px 5px #888888;
+	font-size: 12px;
 }
 
 .form__item {
