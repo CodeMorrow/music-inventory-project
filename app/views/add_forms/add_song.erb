@@ -1,4 +1,4 @@
-<form class="form">
+Ï<form class="form" action="/add_song" method="post">
 	Song:
 	<input class="form__item" type="text" name="titleParam" required><br>
 
@@ -23,52 +23,64 @@
 
   <!-- TODO - Indentation! -->
 	<div class="form__item">Track Length</div>
-	Minutes:
-	<input class="form__item" type="number" min="0" max="99" name="minuteParam" required><br>
-	Seconds:
-	<input class="form__item" type="number" min="0" max="59" name="secondParam" required><br>
+	
+    <div class="form__item time">Minutes:
+	   <input class="form__item" type="number" min="0" max="99" name="minuteParam" required><br>
+	</div>
+    <div class="form__item time">Seconds:
+	   <input class="form__item" type="number" min="0" max="59" name="secondParam" required><br>
+    </div>
+
 	Song Rating:
-	<span class="songrating" name="ratingParamS">
+	<span class="songrating" name="rateSongParam">
         <input type="radio" class="songrating-input" value="5"
-        		id="songrating-input-1-5" name="ratingParamS"/>
+        		id="songrating-input-1-5" name="rateSongParam"/>
         <label for="songrating-input-1-5" class="songrating-star"></label>
+       
         <input type="radio" class="songrating-input" value="4"
-                id="songrating-input-1-4" name="ratingParamS"/>
+                id="songrating-input-1-4" name="rateSongParam"/>
         <label for="songrating-input-1-4" class="songrating-star"></label>
+        
         <input type="radio" class="songrating-input" value="3"
-                id="songrating-input-1-3" name="ratingParamS"/>
+                id="songrating-input-1-3" name="rateSongParam"/>
         <label for="songrating-input-1-3" class="songrating-star"></label>
+        
         <input type="radio" class="songrating-input" value="2"
-                id="songrating-input-1-2" name="ratingParamS"/>
+                id="songrating-input-1-2" name="rateSongParam"/>
         <label for="songrating-input-1-2" class="songrating-star"></label>
+        
         <input type="radio" class="songrating-input" value="1"
-                id="songrating-input-1-1" name="ratingParamS"/>
+                id="songrating-input-1-1" name="rateSongParam"/>
         <label for="songrating-input-1-1" class="songrating-star"></label>
 	</span><br>
 
-  <!-- TODO - BEMify. -->
+  <!-- TODO - BEMify. I attempted to BEMify and it broke the ratings-->
 
-	Album Rating
-	<span class="albumrating" name="ratingParamA">
+	Album Rating:
+	<span class="albumrating" name="rateAlbumParam">
         <input type="radio" class="albumrating-input" value="5"
-        		id="albumrating-input-1-5" name="ratingParamA"/>
+        		id="albumrating-input-1-5" name="rateAlbumParam"/>
         <label for="albumrating-input-1-5" class="albumrating-star"></label>
+        
         <input type="radio" class="albumrating-input" value="4"
-                id="albumrating-input-1-4" name="ratingParamA"/>
+                id="albumrating-input-1-4" name="rateAlbumParam"/>
         <label for="albumrating-input-1-4" class="albumrating-star"></label>
+        
         <input type="radio" class="albumrating-input" value="3"
-                id="albumrating-input-1-3" name="ratingParamA"/>
+                id="albumrating-input-1-3" name="rateAlbumParam"/>
         <label for="albumrating-input-1-3" class="albumrating-star"></label>
+        
         <input type="radio" class="albumrating-input" value="2"
-                id="albumrating-input-1-2" name="ratingParamA"/>
+                id="albumrating-input-1-2" name="rateAlbumParam"/>
         <label for="albumrating-input-1-2" class="albumrating-star"></label>
+        
         <input type="radio" class="albumrating-input" value="1"
-                id="albumrating-input-1-1" name="ratingParamA"/>
+                id="albumrating-input-1-1" name="rateAlbumParam"/>
         <label for="albumrating-input-1-1" class="albumrating-star"></label>
 	</span><br>
-	<input class="form__item" type="submit" name="submit">
+	
+    <input class="form__item" type="submit" name="submit">
 </form>
 
-<%= songinfo %>
 
 

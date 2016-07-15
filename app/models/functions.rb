@@ -1,29 +1,9 @@
-# TODO - Move into its own file.
-class Song
-  def initialize(title,artist,album,genre,minute,second,songrating,albumrating)
-    @title = title #.split.map { |i| i.capitalize }.join(' ')
-    @artist = artist #.split.map { |i| i.capitalize }.join(' ')
-    @album = album #.split.map { |i| i.capitalize }.join(' ')
-    @genre = genre
-    @lengthmin = minute
-    @lengthsec = second
-    @songrating = songrating
-    @albumrating = albumrating
-  end
-
-
-  def songinfo
-      return "#{@title}||#{@artist}||#{@album}||#{@genre}||#{@lengthmin}||#{@lengthsec}||#{@songrating}||#{@albumrating}"
-  end
-end
-
 
 
   # Function adds the string being passed through the songfile variable into the 
   def songAdd2File(songfile)
     File.open('music_db.txt', 'a') {|z| z.puts "#{songfile}" }
   end
-
 
 
   # If file exists, do nothing. Otherwise, create the music_db file with the first row being headers.
