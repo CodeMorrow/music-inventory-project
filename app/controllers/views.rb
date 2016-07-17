@@ -38,7 +38,20 @@ end
 
 
 MyApp.post "/delete" do
-  @delete = params[:deleteParam]
+	@songdelete = params[:songdeleteParam]
+  @artistdelete = params[:artistdeleteParam]
+  @albumdelete = params[:albumdeleteParam]
+
+  @delete = ""
+  
+  if @songdelete != ""
+  	@delete = @songdelete
+  elsif @artistdelete != ""
+  	@delete = @artistdelete
+  elsif @albumdelete != ""
+  	@delete = @albumdelete
+  end
+
   @arraytosearch = arrayToSearch()
 
   @allbutdeleted = allButDeleted(@delete,@arraytosearch)
