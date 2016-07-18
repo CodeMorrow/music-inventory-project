@@ -5,18 +5,10 @@ MyApp.get "/"  do
 end
 
 
-
-
-
 MyApp.get "/songs" do
-
-
 	x = createFileArray()
-
-  erb :"/songs", :locals => {'x' => x}
+ 	erb :"/songs", :locals => {'x' => x}
 end
-
-
 
 
 MyApp.get "/albums" do
@@ -24,13 +16,9 @@ MyApp.get "/albums" do
 end
 
 
-
-
 MyApp.get "/artists" do
 	erb :"/artists"
 end
-
-
 
 
 MyApp.post "/artists" do
@@ -45,17 +33,26 @@ end
 
 
 MyApp.get "/delete" do
-	erb :"/delete_song"
+	erb :"/add_forms/delete_song"
 end
 
 
+<<<<<<< HEAD
 MyApp.post "/delete_song" do
 	@delete = params[:deleteParam]
 	@arraytosearch = arrayToSearch()
+=======
+MyApp.post "/delete" do
+  @delete = params[:deleteParam]
+  @arraytosearch = arrayToSearch()
+>>>>>>> 7937953cb884f03745b5624584e027a3515f7568
 
-	searchresult = searchResult(@artistsearch,@arraytosearch)
+  @allbutdeleted = allButDeleted(@delete,@arraytosearch)
 
-	erb :"/searchresults", :locals => {'searchresult' => searchresult}
+  deleteResultToFile(@allbutdeleted)
+
+ 	x = createFileArray()
+ 	erb :"/songs", :locals => {'x' => x}
 
 end
 
