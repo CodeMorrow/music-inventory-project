@@ -15,7 +15,7 @@ Which Artist are you looking for?
   </tr>
   <% artistarray.each do |artist,album,genre| %>
   <tr class="table__row">
-  	<td class="table__data"><a href= "?artist=<%= artist %>"><%= artist %></td>
+  	<td class="table__data"><a id="artistButton" href= "?artist=<%= artist %>"><%= artist %></td>
   	<td class="table__data"><%= album %></td>
   	<td class="table__data"><%= genre %></td>
   </tr>
@@ -23,9 +23,9 @@ Which Artist are you looking for?
 </table>
 
 <% if @similarartistsarray["error"] == 6 %>
-  <h2>No similar artists found</h2>
+  <h2 id = "errorMessage">No similar artists found</h2>
 <% else %>
-<div class= "similarartists">
+<div id= "similarArtists" class= "similarartists">
   <div class= "similarartists__name">
     <a href= "<%= @similarartistsarray["similarartists"]["artist"][0]["url"] %>"><%= @similarartistsarray["similarartists"]["artist"][0]["name"] %></a>
     <img src= "<%= @similarartistsarray["similarartists"]["artist"][0]["image"][2]["#text"] %>">
