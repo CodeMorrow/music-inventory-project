@@ -22,6 +22,9 @@ Which Artist are you looking for?
    <% end %>
 </table>
 
+<% if @similarartistsarray["error"] == 6 %>
+  <h2>No similar artists found</h2>
+<% else %>
 <div class= "similarartists">
   <div class= "similarartists__name">
     <a href= "<%= @similarartistsarray["similarartists"]["artist"][0]["url"] %>"><%= @similarartistsarray["similarartists"]["artist"][0]["name"] %></a>
@@ -35,7 +38,7 @@ Which Artist are you looking for?
     <a href= "<%= @similarartistsarray["similarartists"]["artist"][2]["url"] %>"><%= @similarartistsarray["similarartists"]["artist"][2]["name"] %></a>
     <img src= "<%= @similarartistsarray["similarartists"]["artist"][2]["image"][2]["#text"] %>">
   </div>
-
+<% end %>
 
 
 </div>

@@ -33,8 +33,8 @@ MyApp.get "/artists" do
 
 	@artist = params[:artist]
 	@similarartistsarray = similarArtists(@artist)
-	erb :"/artists", :locals => {'artistarray' => artistarray}
 	# binding.pry
+	erb :"/artists", :locals => {'artistarray' => artistarray}
 end
 
 
