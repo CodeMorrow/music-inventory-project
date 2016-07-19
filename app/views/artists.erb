@@ -15,10 +15,27 @@ Which Artist are you looking for?
   </tr>
   <% artistarray.each do |artist,album,genre| %>
   <tr class="table__row">
-  	<td class="table__data"><%= artist %></td>
+  	<td class="table__data"><a href= "?artist=<%= artist %>"><%= artist %></td>
   	<td class="table__data"><%= album %></td>
   	<td class="table__data"><%= genre %></td>
   </tr>
    <% end %>
 </table>
 
+<div class= "similarartists">
+  <div class= "similarartists__name">
+    <a href= "<%= @similarartistsarray["similarartists"]["artist"][0]["url"] %>"><%= @similarartistsarray["similarartists"]["artist"][0]["name"] %></a>
+    <img src= "<%= @similarartistsarray["similarartists"]["artist"][0]["image"][2]["#text"] %>">
+  </div>
+  <div class= "similarartists__name">
+    <a href= "<%= @similarartistsarray["similarartists"]["artist"][1]["url"] %>"><%= @similarartistsarray["similarartists"]["artist"][1]["name"] %></a>
+    <img src= "<%= @similarartistsarray["similarartists"]["artist"][1]["image"][2]["#text"] %>">
+  </div>
+  <div class= "similarartists__name">
+    <a href= "<%= @similarartistsarray["similarartists"]["artist"][2]["url"] %>"><%= @similarartistsarray["similarartists"]["artist"][2]["name"] %></a>
+    <img src= "<%= @similarartistsarray["similarartists"]["artist"][2]["image"][2]["#text"] %>">
+  </div>
+
+
+
+</div>
