@@ -15,7 +15,6 @@
  end
 
 
-
  # Create an array of each line in the file as a variable.
  def createFileArray
      y = File.foreach("music_db.txt").map { |line| line.split("||") }
@@ -24,17 +23,9 @@
    # end
  end
  
+# -------- Methods for searching for and deleting songs --------
 
-# def searchResult(search, filearray)
-#   @searchresults = Array.new
-#   filearray.each do |x|
-#     if x.include?(search)
-#       @searchresults.push(x)
-#     end
-#   end
-#   return @searchresults
-# end
-
+# Retrieves the music_db.txt file and converts it into an array to be searched through
 def arrayToSearch
   @arraytosearch = Array.new
   File.foreach("music_db.txt").each do |x|
@@ -44,7 +35,8 @@ def arrayToSearch
   return @arraytosearch
 end
   
-
+# Searches array created above and pushes into an array any arrays that include the element searched for
+# and then returns that array
 def searchResult(search,arraytosearch)
   @searchresults = Array.new
   arraytosearch.each do |x|
@@ -55,6 +47,8 @@ def searchResult(search,arraytosearch)
   return @searchresults
 end
 
+# Searches array created above and pushes into an array any arrays that do not include the element entered
+# into the delete form, and then returns that array
 def allButDeleted(delete,arraytosearch)
   @deletesearchresults = Array.new
   arraytosearch.each do |x|
@@ -65,6 +59,8 @@ def allButDeleted(delete,arraytosearch)
   return @deletesearchresults
 end
 
+# Takes the array created above, which does not include the element entered into the delete form, and 
+# overwrites it onto the music_db.txt file
 def deleteResultToFile(allbutdeleted)
   @arraytofile = Array.new
   allbutdeleted.each do |x|
@@ -77,6 +73,27 @@ def deleteResultToFile(allbutdeleted)
     end
   end
 end
+
+
+def returnAlbums(arraytosearch)
+  @albumarray = Array.new
+  arraytosearch.each do |title,artist,album,genre,minutes,seconds,songrating,albumrating|
+      @albumline = [album,artist,genre,albumrating]
+      @albumarray.push(@albumline)
+  end
+  return @albumarray
+end
+
+def returnArtists(arraytosearch)
+  @albumarray = Array.new
+  arraytosearch.each do |title,artist,album,genre,minutes,seconds,songrating,albumrating|
+      @albumline = [artist,album,genre]
+      @albumarray.push(@albumline)
+  end
+  return @albumarray
+end
+
+
 
 
 

@@ -7,3 +7,18 @@ Which Artist are you looking for?
 </form>
 
 
+<table class="table">
+  <tr class="table__row">
+    <th class="table__header">Artist</th> 
+    <th class="table__header">Album</th>
+    <th class="table__header">Genre</th>
+  </tr>
+  <% artistarray.each do |artist,album,genre| %>
+  <tr class="table__row">
+  	<td class="table__data"><%= artist %></td>
+  	<td class="table__data"><%= album %></td>
+  	<td class="table__data"><%= genre %></td>
+  </tr>
+   <% end %>
+</table>
+

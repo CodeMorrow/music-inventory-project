@@ -12,12 +12,25 @@ end
 
 
 MyApp.get "/albums" do
-	erb :"/albums"
+	arraytosearch = arrayToSearch()
+	albumarray = returnAlbums(arraytosearch)
+	erb :"/albums", :locals => {'albumarray' => albumarray}
 end
 
+MyApp.post "/albums" do
+	@albumsearch = params[:albumSearchParam]
+	@arraytosearch = arrayToSearch()
+
+	searchresult = searchResult(@albumsearch,@arraytosearch)
+
+	erb :"/searchresults", :locals => {'searchresult' => searchresult}
+
+end
 
 MyApp.get "/artists" do
-	erb :"/artists"
+	arraytosearch = arrayToSearch()
+	artistarray = returnArtists(arraytosearch)
+	erb :"/artists", :locals => {'artistarray' => artistarray}
 end
 
 
@@ -30,33 +43,6 @@ MyApp.post "/artists" do
 	erb :"/searchresults", :locals => {'searchresult' => searchresult}
 
 end
-
-
-MyApp.get "/delete" do
-	erb :"/add_forms/delete_song"
-end
-
-
-<<<<<<< HEAD
-MyApp.post "/delete_song" do
-	@delete = params[:deleteParam]
-	@arraytosearch = arrayToSearch()
-=======
-MyApp.post "/delete" do
-  @delete = params[:deleteParam]
-  @arraytosearch = arrayToSearch()
->>>>>>> 7937953cb884f03745b5624584e027a3515f7568
-
-  @allbutdeleted = allButDeleted(@delete,@arraytosearch)
-
-  deleteResultToFile(@allbutdeleted)
-
- 	x = createFileArray()
- 	erb :"/songs", :locals => {'x' => x}
-
-end
-
-
 
 
 # ---- Controls for add forms below ----
@@ -95,5 +81,41 @@ MyApp.get "/add_song" do
 	erb :"add_forms/add_song"
 
 end
+
+# ---- Controls for delete forms below ----
+
+MyApp.get "/delete" do
+	erb :"/add_forms/delete_song"
+end
+
+
+MyApp.post "/delete" do
+	@songdelete = params[:songdeleteParam]
+  @artistdelete = params[:artistdeleteParam]
+  @albumdelete = params[:albumdeleteParam]
+
+  @delete = ""
+
+  if @songdelete != ""
+  	@delete = @songdelete
+  elsif @artistdelete != ""
+  	@delete = @artistdelete
+  elsif @albumdelete != ""
+  	@delete = @albumdelete
+  end
+
+  @arraytosearch = arrayToSearch()
+
+  @allbutdeleted = allButDeleted(@delete,@arraytosearch)
+
+  deleteResultToFile(@allbutdeleted)
+
+ 	x = createFileArray()
+ 	erb :"/songs", :locals => {'x' => x}
+
+end
+
+
+
 
 
