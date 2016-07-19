@@ -1,7 +1,25 @@
 <form class="form" action="/albums" method="post">
 	
 	Which Album are you looking for?<br>
-	<input class="form__item" type="text" name="albumParam" required=""><br>
+	<input class="form__item" type="text" name="albumSearchParam" required=""><br>
 	
     <input class="form__item submit" type="submit" name="submit">
 </form>
+
+<table class="table">
+  <tr class="table__row">
+    <th class="table__header">Album</th> 
+    <th class="table__header">Artist</th>
+    <th class="table__header">Genre</th>
+    <th class="table__header">Album Rating</th> 
+  </tr>
+  <% albumarray.each do |album,artist,genre,albumrating| %>
+  <tr class="table__row">
+  	<td class="table__data"><%= album %></td>
+  	<td class="table__data"><%= artist %></td>
+  	<td class="table__data"><%= genre %></td>
+  	<td class="table__data rating"><%= albumrating %></td>
+  </tr>
+   <% end %>
+</table>
+
