@@ -1,3 +1,8 @@
+require_relative 'secret.rb'
+require 'httparty'
+require 'pry'
+
+
  # Function adds the string being passed through the songfile variable into the 
  def songAdd2File(songfile)
    File.open('music_db.txt', 'a') {|z| z.puts "#{songfile}" }
@@ -92,6 +97,9 @@ def returnArtists(arraytosearch)
   end
   return @albumarray
 end
+
+
+
 
 
 

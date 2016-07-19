@@ -7,3 +7,4 @@ coverage/.resultset*
 .env
 public/uploads
 app/models/js_sandbox.rb
+secret.rb

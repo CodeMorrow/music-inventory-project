@@ -15,11 +15,24 @@
   </tr>
   <% albumarray.each do |album,artist,genre,albumrating| %>
   <tr class="table__row">
-  	<td class="table__data"><%= album %></td>
+  	<td class="table__data"><a href="?album=<%= album %>&artist=<%= artist%>"><%= album %></a></td>
   	<td class="table__data"><%= artist %></td>
   	<td class="table__data"><%= genre %></td>
   	<td class="table__data rating"><%= albumrating %></td>
   </tr>
    <% end %>
 </table>
+
+
+<!-- Div for Similar album listing. -->
+<div class ="">
+    <%if @albumdata["error"] == 6 %>
+        <h2>No album found or selected.</h2>
+    <%else%>
+    <div class =""><a href=<%@albumdata["album"]["url"]%> target="_blank"> <img src=<%= @albumdata["album"]["image"][2]["#text"]%>></a></div>
+    <div class =""><a href=<%@albumdata["album"]["url"]%> target="_blank"> <%= @albumdata["album"]["artist"]%> </a></div>
+    <div class =""><a href=<%@albumdata["album"]["url"]%> target="_blank"> <%= @albumdata["album"]["name"]%> </a></div>
+    <div class =""><a href=<%@albumdata["album"]["url"]%> target="_blank"> <%= @albumdata["album"]["url"]%>More Details </a></div>
+    <%end%>
+</div>
 

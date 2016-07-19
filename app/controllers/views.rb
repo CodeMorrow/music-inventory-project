@@ -7,6 +7,7 @@ end
 
 MyApp.get "/songs" do
 	x = createFileArray()
+
  	erb :"/songs", :locals => {'x' => x}
 end
 
@@ -14,14 +15,23 @@ end
 MyApp.get "/albums" do
 	arraytosearch = arrayToSearch()
 	albumarray = returnAlbums(arraytosearch)
+
+	@album = params[:album]
+	@artist = params[:artist]
+
+	@albumdata = getAlbumInfo(@artist,@album)
+
+# binding.pry
+
 	erb :"/albums", :locals => {'albumarray' => albumarray}
 end
+
 
 MyApp.post "/albums" do
 	@albumsearch = params[:albumSearchParam]
 	@arraytosearch = arrayToSearch()
 
-	searchresult = searchResult(@albumsearch,@arraytosearch)
+	searchresult = searchResult(@albumsearch,@arraytosearch)	
 
 	erb :"/searchresults", :locals => {'searchresult' => searchresult}
 
@@ -41,7 +51,6 @@ MyApp.post "/artists" do
 	searchresult = searchResult(@artistsearch,@arraytosearch)
 
 	erb :"/searchresults", :locals => {'searchresult' => searchresult}
-
 end
 
 
