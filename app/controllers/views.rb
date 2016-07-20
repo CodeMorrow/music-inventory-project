@@ -22,7 +22,6 @@ MyApp.get "/albums" do
 	@albumdata = getAlbumInfo(@artist,@album)
 
 # binding.pry
-
 	erb :"/albums", :locals => {'albumarray' => albumarray}
 end
 
@@ -34,7 +33,6 @@ MyApp.post "/albums" do
 	searchresult = searchResult(@albumsearch,@arraytosearch)	
 
 	erb :"/searchresults", :locals => {'searchresult' => searchresult}
-
 end
 
 MyApp.get "/artists" do
