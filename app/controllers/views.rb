@@ -1,5 +1,6 @@
 require 'pry'
 
+
 MyApp.get "/"  do
 	erb :"/home"
 end
@@ -16,10 +17,16 @@ MyApp.get "/albums" do
 	arraytosearch = arrayToSearch()
 	albumarray = returnAlbums(arraytosearch)
 
-	@album = params[:album]
-	@artist = params[:artist]
+	album = params[:album]
+	artist = params[:artist]
 
-	@albumdata = getAlbumInfo(@artist,@album)
+	@albumdata = getAlbumInfo(artist,album)
+
+	@album_url = getAlbumUrl(@albumdata)
+	@album_img = getAlbumImage(@albumdata)
+	@album_ttl = getAlbumTitle(@albumdata)
+	@album_artist = getAlbumArtist(@albumdata)
+	@error_msg = "Album not found." 
 
 # binding.pry
 	erb :"/albums", :locals => {'albumarray' => albumarray}

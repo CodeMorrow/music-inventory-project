@@ -19,12 +19,12 @@
 <!-- Div for album listing. -->
 <div class ="">
     <%if @albumdata["error"] == 6 %>
-        <h2>No album found or selected.</h2>
-    <%else%>
-    <div class =""><a href=<%= @albumdata["album"]["url"]%> target="_blank"> <img src=<%= @albumdata["album"]["image"][2]["#text"]%>></a></div>
-    <div class =""><a href=<%= @albumdata["album"]["url"]%> target="_blank"> <%= @albumdata["album"]["artist"]%> </a></div>
-    <div class =""><a href=<%= @albumdata["album"]["url"]%> target="_blank"> <%= @albumdata["album"]["name"]%> </a></div>
-    <div class =""><a href=<%= @albumdata["album"]["url"]%> target="_blank"> More Album Info </a></div>
-    <%end%>
+        <h2> <%= @error_msg %> </h2>
+    <% else %>
+      <div class =""><a href=<%= @album_url %> target="_blank"> <img src=<%= @album_img %>></a></div>
+      <div class =""><a href=<%= @album_url %> target="_blank"> <%= @album_artist %> </a></div>
+      <div class =""><a href=<%= @album_url %> target="_blank"> <%= @album_ttl %> </a></div>
+      <div class =""><a href=<%= @album_url %> target="_blank"> More Album Info </a></div>
+    <% end %>
 </div>
 
