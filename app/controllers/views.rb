@@ -37,8 +37,16 @@ MyApp.get "/artists" do
 	@similarartisturls = similarArtistUrls(@similarartistsarray)
 	@similarartistnames = similarArtistNames(@similarartistsarray)
 	@similarartistimages = similarArtistImages(@similarartistsarray)
-	# binding.pry
-	@topalbums = topAlbums(@artist)
+
+	@topalbumsarray = topAlbums(@artist)
+	@topalbumurls = topAlbumUrls(@topalbumsarray)
+	@topalbumnames = topAlbumNames(@topalbumsarray)
+	@topalbumimages = topAlbumImages(@topalbumsarray)
+
+	@toptracksarray = topTracks(@artist)
+	@toptrackurls = topTrackUrls(@toptracksarray)
+	@toptracknames = topTrackNames(@toptracksarray)
+	@toptrackimages = topTrackImages(@toptracksarray)
 
 	erb :"/artists", :locals => {'artistarray' => artistarray}
 end

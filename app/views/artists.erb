@@ -30,13 +30,50 @@
     <div id="artistClose">X</div> -->
   
     <% 3.times do |x| %>
-      <div class= "similarartists__name">
+      <div class= "">
         <a href= "<%= @similarartisturls[x] %>"><%=   @similarartistnames[x] %></a>
         <img src= "<%= @similarartistimages[x] %>">
       </div>
     <% end %>
-  
+
+  <% end %>
+
+  <% if @topalbumsarray["error"] == 6 %>
+    <div id = "errorMessage">
+      <div id="artistClose">X</div>
+      <div class="errorMessage">We're sorry, there were no similar artist found.</div>
     </div>
+  
+  <% else %>
+    <!-- <div id= "topAlbums" class= "topAlbums">
+    <div id="artistClose">X</div> -->
+  
+    <% 3.times do |x| %>
+      <div class= "">
+        <a href= "<%= @topalbumurls[x] %>"><%=   @topalbumnames[x] %></a>
+        <img src= "<%= @topalbumimages[x] %>">
+      </div>
+      <% end %>
+
+  <% end %>
+  
+  <% if @toptracksarray["error"] == 6 %>
+    <div id = "errorMessage">
+      <div id="artistClose">X</div>
+      <div class="errorMessage">We're sorry, there were no similar artist found.</div>
+    </div>
+
+  <% else %>
+    <!-- <div id= "similarArtists" class= "similarartists">
+    <div id="artistClose">X</div> -->
+
+    <% 3.times do |x| %>
+     <div class= "">
+       <a href= "<%= @toptrackurls[x] %>"><%=   @toptracknames[x] %></a>
+       <img src= "<%= @toptrackimages[x] %>">
+     </div>
+    <% end %>
+
   <% end %>
 
 <% end %>
