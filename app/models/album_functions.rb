@@ -1,6 +1,6 @@
-require_relative 'secret.rb'
-require 'httparty'
-require 'pry'
+# require_relative 'secret.rb'
+# require 'httparty'
+# require 'pry'
 
 
 
