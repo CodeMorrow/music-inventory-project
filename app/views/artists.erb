@@ -1,39 +1,52 @@
-<table class="table">
-  <tr class="table__row">
-    <th class="table__header">Artist</th> 
-    <th class="table__header">Album</th>
-    <th class="table__header">Genre</th>
-  </tr>
-  <% artistarray.each do |artist,album,genre| %>
-  <tr class="table__row">
-  	<td id="artistButton" class="table__data"><%= artist %></td>
-  	<td class="table__data"><%= album %></td>
-  	<td class="table__data"><%= genre %></td>
-  </tr>
-   <% end %>
-</table>
+<% if @artist == nil %>
+  <table class="table">
+    <tr class="table__row">
+      <th class="table__header">Artist</th> 
+    </tr>
+    <% artistarray.each do |artist,album,genre| %>
+    <tr class="table__row">
+    	<td id="artistButton" class="table__data"><a href= "?artist=<%= artist %>"><%= artist %></a></td>
+    </tr>
+     <% end %>
+  </table>
 
-<% if @similarartistsarray["error"] == 6 %>
-  <div id = "errorMessage">
-    <div id="artistClose">X</div>
-    <div class="errorMessage">We're sorry, there were no similar artist found.</div>
-  </div>
+  
+
 <% else %>
-<div id= "similarArtists" class= "similarartists">
-  <div id="artistClose">X</div>
-  <div class= "similarartists__name">
-    <a href= "<%= @similarartistsarray["similarartists"]["artist"][0]["url"] %>"><%= @similarartistsarray["similarartists"]["artist"][0]["name"] %></a>
-    <img src= "<%= @similarartistsarray["similarartists"]["artist"][0]["image"][2]["#text"] %>">
-  </div>
-  <div class= "similarartists__name">
-    <a href= "<%= @similarartistsarray["similarartists"]["artist"][1]["url"] %>"><%= @similarartistsarray["similarartists"]["artist"][1]["name"] %></a>
-    <img src= "<%= @similarartistsarray["similarartists"]["artist"][1]["image"][2]["#text"] %>">
-  </div>
-  <div class= "similarartists__name">
-    <a href= "<%= @similarartistsarray["similarartists"]["artist"][2]["url"] %>"><%= @similarartistsarray["similarartists"]["artist"][2]["name"] %></a>
-    <img src= "<%= @similarartistsarray["similarartists"]["artist"][2]["image"][2]["#text"] %>">
-  </div>
+
+  <h1 id="artistButton"><%= @artist %></h1>
+  <div class= "similarartistbutton">Similar Artists </div>
+  <div class= "topalbumsbutton">Top Albums</div>
+  <div class= "toptracksbutton">Top Tracks</div>
+  
+  <% if @similarartistsarray["error"] == 6 %>
+    <div id = "errorMessage">
+      <div id="artistClose">X</div>
+      <div class="errorMessage">We're sorry, there  were no similar artist found.</div>
+    </div>
+  
+  <% else %>
+    <!-- <div id= "similarArtists" class= "similarartists  ">
+    <div id="artistClose">X</div> -->
+  
+    <% 3.times do |x| %>
+      <div class= "similarartists__name">
+        <a href= "<%= @similarartisturls[x] %>"><%=   @similarartistnames[x] %></a>
+        <img src= "<%= @similarartistimages[x] %>">
+      </div>
+    <% end %>
+  
+    </div>
+  <% end %>
+
 <% end %>
 
 
-</div>
+<div class= "backbutton"><a href= "/artists">Back</a></div>
+
+
+
+
+
+
+
