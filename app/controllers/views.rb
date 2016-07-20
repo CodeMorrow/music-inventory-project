@@ -38,6 +38,10 @@ end
 MyApp.get "/artists" do
 	arraytosearch = arrayToSearch()
 	artistarray = returnArtists(arraytosearch)
+
+	@artist = params[:artist]
+	@similarartistsarray = similarArtists(@artist)
+	# binding.pry
 	erb :"/artists", :locals => {'artistarray' => artistarray}
 end
 
