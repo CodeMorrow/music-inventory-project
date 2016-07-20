@@ -1,3 +1,9 @@
+# Functions for Similar Artists section of Artists page
+#
+# Functions request 'similar artists' array from Last.fm API 
+#
+# Functions obtain URLs, titles, and images from 'similar artists' array and return them in separate arrays. 
+
 def similarArtists(artist)
 	artistinfo = HTTParty.get("http://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=#{artist}&api_key=#{API_KEY}&format=json")
 	return artistinfo
@@ -37,8 +43,11 @@ def similarArtistImages(similarartistsarray)
 end
 
 
-
-
+# Functions for Top Albums section of Artists page
+#
+# Functions request 'top albums' array from Last.fm API 
+#
+# Functions obtain URLs, titles, and images from 'top albums' array and return them in separate arrays. 
 
 def topAlbums(artist)
 	artistinfo = HTTParty.get("http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=#{artist}&api_key=#{API_KEY}&format=json")
@@ -79,12 +88,11 @@ def topAlbumImages(topalbumsarray)
 end
 
 
-
-
-
-
-
-
+# Functions for Top Tracks section of Artists page
+#
+# Functions request 'top tracks' array from Last.fm API 
+#
+# Functions obtain URLs, titles, and images from 'top tracks' array and return them in separate arrays. 
 
 def topTracks(artist)
 	artistinfo = HTTParty.get("http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=#{artist}&api_key=#{API_KEY}&format=json")
@@ -123,11 +131,6 @@ def topTrackImages(toptracksarray)
 	end
 	return trackimages
 end
-
-
-
-
-
 
 
 
