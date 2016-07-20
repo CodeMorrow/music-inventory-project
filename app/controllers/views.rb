@@ -1,5 +1,6 @@
 require 'pry'
 
+
 MyApp.get "/"  do
 	erb :"/home"
 end
@@ -7,6 +8,7 @@ end
 
 MyApp.get "/songs" do
 	x = createFileArray()
+
  	erb :"/songs", :locals => {'x' => x}
 end
 
@@ -14,17 +16,30 @@ end
 MyApp.get "/albums" do
 	arraytosearch = arrayToSearch()
 	albumarray = returnAlbums(arraytosearch)
+
+	album = params[:album]
+	artist = params[:artist]
+
+	@albumdata = getAlbumInfo(artist,album)
+
+	@album_url = getAlbumUrl(@albumdata)
+	@album_img = getAlbumImage(@albumdata)
+	@album_ttl = getAlbumTitle(@albumdata)
+	@album_artist = getAlbumArtist(@albumdata)
+	@error_msg = "Album not found." 
+
+# binding.pry
 	erb :"/albums", :locals => {'albumarray' => albumarray}
 end
+
 
 MyApp.post "/albums" do
 	@albumsearch = params[:albumSearchParam]
 	@arraytosearch = arrayToSearch()
 
-	searchresult = searchResult(@albumsearch,@arraytosearch)
+	searchresult = searchResult(@albumsearch,@arraytosearch)	
 
 	erb :"/searchresults", :locals => {'searchresult' => searchresult}
-
 end
 
 MyApp.get "/artists" do
@@ -45,7 +60,6 @@ MyApp.post "/artists" do
 	searchresult = searchResult(@artistsearch,@arraytosearch)
 
 	erb :"/searchresults", :locals => {'searchresult' => searchresult}
-
 end
 
 
@@ -118,5 +132,8 @@ MyApp.post "/delete" do
  	erb :"/songs", :locals => {'x' => x}
 
 end
+
+
+
 
 

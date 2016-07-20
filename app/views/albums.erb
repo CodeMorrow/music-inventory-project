@@ -7,11 +7,24 @@
   </tr>
   <% albumarray.each do |album,artist,genre,albumrating| %>
   <tr class="table__row">
-  	<td class="table__data"><%= album %></td>
+  	<td class="table__data"><a href="?album=<%= album %>&artist=<%= artist %>"><%= album %></a></td>
   	<td class="table__data"><%= artist %></td>
   	<td class="table__data"><%= genre %></td>
   	<td class="table__data rating"><%= albumrating %></td>
   </tr>
    <% end %>
 </table>
+
+
+<!-- Div for album listing. -->
+<div class ="">
+    <%if @albumdata["error"] == 6 %>
+        <h2> <%= @error_msg %> </h2>
+    <% else %>
+      <div class =""><a href=<%= @album_url %> target="_blank"> <img src=<%= @album_img %>></a></div>
+      <div class =""><a href=<%= @album_url %> target="_blank"> <%= @album_artist %> </a></div>
+      <div class =""><a href=<%= @album_url %> target="_blank"> <%= @album_ttl %> </a></div>
+      <div class =""><a href=<%= @album_url %> target="_blank"> More Album Info </a></div>
+    <% end %>
+</div>
 
