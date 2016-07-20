@@ -75,10 +75,6 @@
 	width: 16px;
 }
 
-#deleteSongForm {
-	visibility: hidden;
-}
-
 .deleteItem__button {
 	display: flex;
 	justify-content: center;
@@ -180,7 +176,13 @@
 	outline: none;
 }
 
-/* -------------------- Add Form CSS -------------------- */
+/* -------------------- Add/Delete Form CSS -------------------- */
+#addClose {
+	display: flex;
+	justify-content: flex-end;
+	cursor: pointer;
+}
+
 #addSongForm {
 	visibility: hidden;
 	position: absolute;
@@ -286,14 +288,22 @@
     background: url('http://kubyshkin.ru/samples/star-rating/star.png') 0 -16px;
 }
 
-
-
 .submit {
 	background-color: white;
 }
 
 .submit:hover {
 	border-color: white;
+}
+
+#deleteSongForm {
+	visibility: hidden;
+}
+
+#deleteClose {
+	display: flex;
+	justify-content: flex-end;
+	cursor: pointer;
 }
 
 /* -------------------- Song List CSS -------------------- */
@@ -319,6 +329,12 @@
 }
 
 /* -------------------- Similar Artist CSS -------------------- */
+
+#artistClose {
+	display: flex;
+	justify-content: flex-end;
+	cursor: pointer;
+}
 
 #similarArtists {
 	visibility: hidden;

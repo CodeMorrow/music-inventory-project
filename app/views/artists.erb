@@ -14,9 +14,13 @@
 </table>
 
 <% if @similarartistsarray["error"] == 6 %>
-  <h2 id = "errorMessage">No similar artists found</h2>
+  <div id = "errorMessage">
+  <div id="artistClose">X</div>
+  <h2>No similar artists found</h2>
+  </div>
 <% else %>
 <div id= "similarArtists" class= "similarartists">
+  <div id="artistClose">X</div>
   <div class= "similarartists__name">
     <a href= "<%= @similarartistsarray["similarartists"]["artist"][0]["url"] %>"><%= @similarartistsarray["similarartists"]["artist"][0]["name"] %></a>
     <img src= "<%= @similarartistsarray["similarartists"]["artist"][0]["image"][2]["#text"] %>">

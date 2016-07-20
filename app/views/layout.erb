@@ -50,6 +50,7 @@
 </div>
 
 <form id="addSongForm" class="form" action="/add_song" method="post">
+<div id="addClose">X</div>
   Song:
   <input class="form__item" type="text" name="titleParam" required><br>
 
@@ -135,7 +136,7 @@
 
 
 <form id="deleteSongForm" class="form" action="/delete" method="post">
-    
+    <div id="deleteClose">X</div>
     <p>To delete specific song please include all the information you know.<p><br>
 
     <p>To delete an entire Album only complete the album box</p><br>
