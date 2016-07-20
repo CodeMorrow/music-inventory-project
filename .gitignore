@@ -7,4 +7,4 @@ coverage/.resultset*
 .env
 public/uploads
 secret.rb
-
+api_key.rb
