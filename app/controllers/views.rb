@@ -1,5 +1,3 @@
-# require 'pry'
-
 
 MyApp.get "/"  do
 	erb :"/home"
@@ -17,17 +15,6 @@ MyApp.get "/albums" do
 	arraytosearch = arrayToSearch()
 	albumarray = returnAlbums(arraytosearch)
 
-	album = params[:album]
-	artist = params[:artist]
-
-	@albumdata = getAlbumInfo(artist,album)
-
-	@album_url = getAlbumUrl(@albumdata)
-	@album_img = getAlbumImage(@albumdata)
-	@album_ttl = getAlbumTitle(@albumdata)
-	@album_artist = getAlbumArtist(@albumdata)
-	@error_msg = "Album not found." 
-
 	erb :"/albums", :locals => {'albumarray' => albumarray}
 end
 
@@ -40,6 +27,25 @@ MyApp.post "/albums" do
 
 	erb :"/searchresults", :locals => {'searchresult' => searchresult}
 end
+
+
+MyApp.get "/albumdetail" do
+	@album = params[:album]
+	@artist = params[:artist]
+	@albumdata = getAlbumInfo(@artist,@album)
+
+	@album_url = getAlbumUrl(@albumdata)
+	@album_img = getAlbumImage(@albumdata)
+	@album_ttl = getAlbumTitle(@albumdata)
+	@error_msg = "Album not found."
+	@album_artist = getAlbumArtist(@albumdata)
+
+	@trackarray = @albumdata["album"]["tracks"]["track"]
+	@tracklist = getAlbumTracks(@trackarray)
+
+	erb :"/albumdetail"
+end
+
 
 MyApp.get "/artists" do
 	arraytosearch = arrayToSearch()
