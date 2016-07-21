@@ -31,7 +31,7 @@
 	padding: 10px;
 	background-image: url("images/homepage_background.jpg");
 	background-size: cover;
-	background-position: center bottom;
+	background-position: bottom;
 	background-attachment: fixed;
 }
 
