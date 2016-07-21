@@ -579,22 +579,24 @@
 
 .tabContent {
     display: flex;
-    position: fixed;
-    top: 58px;
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
-    width: 350px;
+    width: 347px;
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
     font-size: 14px;
+    background-color: #ddd;
 }
 
 .similarArtist__image {
 	width: 100px;
 	border: solid 1px black;
-	box-shadow: 2px, 2px, 3px, black;
+	box-shadow: 10px, 10px, 10px, black;
 }
-
-
+/* ------------------- Artist Bio Style ---------------*/
+.artistBio {
+	width: 600px;
+	background-color:rgba(255, 255, 255, 0.75);
+}
