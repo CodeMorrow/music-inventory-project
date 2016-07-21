@@ -29,6 +29,10 @@
 	border-radius: 0 0 20px 20px;
 	min-height: 85vh;
 	padding: 10px;
+	background-image: url("images/homepage_background.jpg");
+	background-size: cover;
+	background-position: center bottom;
+	background-attachment: fixed;
 }
 
 /* -------------------- Homepage CSS -------------------- */
@@ -326,6 +330,7 @@
 
 .table__data {
 	padding: 2px;
+	background-color:rgba(255, 255, 255, 0.75);
 }
 
 /* -------------------- Similar Artist CSS -------------------- */
