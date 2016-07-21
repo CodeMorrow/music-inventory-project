@@ -14,19 +14,18 @@
 
 <% else %>
 
-  <h1><%= @artist %></h1>
+  <h1 id="artistButton"><a href= "<%= @artisturl %>"><%= @artist %></a></h1>
+  
+  <div class= "artistbio"><%= @artistbio %></div>
 
   <ul class="artistTab">
     <li><a href="#" class="artistTab__link" onclick="openTab(event, 'topAlbums')">Top Albums</a></li>
     <li><a href="#" class="artistTab__link" onclick="openTab(event, 'topTracks')">Top Tracks</a></li>
     <li><a href="#" class="artistTab__link" onclick="openTab(event, 'similarArtist')">Similar Artists</a></li>
   </ul>
-
-<% end %>
-<!--              Similar Artist Tab     -->
-<% if @similarartistsarray["error"] == 6 %>
-
-  <div id = "errorMessage">
+  
+  <% if @artistinfo["error"] == 6 %>
+    <div id = "errorMessage">
     <div class="errorMessage">We're sorry, there were no similar artist found.</div>
     <div class= "backbutton"><a href= "/artists">Back to Artist List Page</a></div>
   </div>
@@ -34,7 +33,7 @@
 <% else %>
 
   <div id= "similarArtist" class= "tabContent">
-
+  
     <% 3.times do |x| %>
 
       <div class= "">
@@ -102,3 +101,4 @@
   </div>
 
   <% end %>
+<% end %>
