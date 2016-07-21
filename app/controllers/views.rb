@@ -33,10 +33,13 @@ MyApp.get "/artists" do
 
 	@artist = params[:artist]
 
-	@similarartistsarray = similarArtists(@artist)
-	@similarartisturls = similarArtistUrls(@similarartistsarray)
-	@similarartistnames = similarArtistNames(@similarartistsarray)
-	@similarartistimages = similarArtistImages(@similarartistsarray)
+	@artistinfo = artistInfo(@artist)
+	@artisturl = artistInfoUrl(@artistinfo)
+	@artistbio = artistInfoBio(@artistinfo)
+	@artistimage = artistInfoImage(@artistinfo)
+	@similarartisturls = similarArtistUrls(@artistinfo)
+	@similarartistnames = similarArtistNames(@artistinfo)
+	@similarartistimages = similarArtistImages(@artistinfo)
 
 	@topalbumsarray = topAlbums(@artist)
 	@topalbumurls = topAlbumUrls(@topalbumsarray)
