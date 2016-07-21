@@ -14,12 +14,14 @@
 
 <% else %>
 
-  <h1 id="artistButton"><%= @artist %></h1>
+  <h1 id="artistButton"><a href= "<%= @artisturl %>"><%= @artist %></a></h1>
+  
+  <div class= "artistbio"><%= @artistbio %></div>
   <div class= "similarartistbutton">Similar Artists </div>
   <div class= "topalbumsbutton">Top Albums</div>
   <div class= "toptracksbutton">Top Tracks</div>
   
-  <% if @similarartistsarray["error"] == 6 %>
+  <% if @artistinfo["error"] == 6 %>
     <div id = "errorMessage">
       <div id="artistClose">X</div>
       <div class="errorMessage">We're sorry, there  were no similar artist found.</div>
