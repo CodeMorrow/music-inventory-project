@@ -1,6 +1,6 @@
-require_relative 'secret.rb'
-require 'httparty'
-require 'pry'
+# require_relative 'secret.rb'
+# require 'httparty'
+# require 'pry'
 
 
  # Function adds the string being passed through the songfile variable into the 
