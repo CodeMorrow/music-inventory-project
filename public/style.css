@@ -333,6 +333,77 @@
 	background-color:rgba(255, 255, 255, 0.75);
 }
 
+/* -------------------- Artist List CSS -------------------- */
+
+
+.artistTable, .artistTable__header, .artistTable__data {
+    border: 2px solid gray;
+    text-align: center;
+}
+
+.artistTable {
+	width: 450px;
+	border-collapse: collapse;
+	
+}
+
+.artistTable__header {
+	height: 30px;
+	background-color: lightgray;
+}
+
+.artistTable__data {
+	padding: 2px;
+	background-color:rgba(255, 255, 255, 0.75);
+}
+
+.artistTable__link {
+	text-decoration: none;
+}
+
+.artistTable__link:visited {
+	color: black;
+}
+
+.artistTable__link:hover {
+	text-shadow: 0px 0px 2px rgba(100, 100, 100, 1);
+}
+
+/* -------------------- Album List CSS -------------------- */
+
+.ablumTable, .ablumTable__header, .ablumTable__data {
+    border: 2px solid gray;
+    text-align: center;
+}
+
+.ablumTable {
+	width: 450px;
+	border-collapse: collapse;
+	
+}
+
+.ablumTable__header {
+	height: 30px;
+	background-color: lightgray;
+}
+
+.ablumTable__data {
+	padding: 2px;
+	background-color:rgba(255, 255, 255, 0.75);
+}
+
+.ablumTable__link {
+	text-decoration: none;
+}
+
+.ablumTable__link:visited {
+	color: black;
+}
+
+.ablumTable__link:hover {
+	text-shadow: 0px 0px 2px rgba(100, 100, 100, 1);
+}
+
 /* -------------------- Similar Artist CSS -------------------- */
 
 #artistButton {
@@ -409,3 +480,50 @@
     z-index: 10; /* keep on top of other elements on the page */
     outline: 9999px solid rgba(0,0,0,0.5);
 }
+/* ------------------------------- Artist info Tabs ---------------- */
+
+/* Style the list */
+.artistTab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Float the list items side by side */
+.artistTab li {
+	float: left;
+}
+
+/* Style the links inside the list items */
+.artistTab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+.artistTab li a:hover {
+	background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.artistTab li a:focus, .active {
+	background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabContent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+
