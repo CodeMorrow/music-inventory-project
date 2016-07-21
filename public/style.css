@@ -528,6 +528,7 @@
     justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
+    font-size: 14px;
 }
 
 .similarArtist__image {
