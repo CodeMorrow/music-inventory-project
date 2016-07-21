@@ -1,0 +1,29 @@
+<div class ="" style="display: flex;">
+    <%if @albumdata["error"] == 6 %>
+        <h2> <%= @error_msg %> </h2>
+    <% else %>
+		<div class="">
+	    	<div class =""><b> <%= @album_artist %> </b> </div>
+			<div class =""> <%= @album_ttl %> </div>
+	    	<div class =""><a href=<%= @album_url %> target="_blank"><img src=<%= @album_img %>></a></div>
+		</div>
+    <% end %>
+	<div class ="">
+		<b>Track List</b>
+		<ul>
+			<% z=1 %>
+			<% @tracklist.each do |i| %>
+				<li><%= z.to_s + "." %> <%= @tracklist[z-1] %> </li>
+				<% z=z+1 %>
+			<% end %>
+		</ul>
+	</div>
+</div>
+
+<div class ="">
+	<a href=<%= @album_url %> target="_blank"> More album info at last.fm </a>
+</div>
+
+<div class ="">
+	<a href="/albums"> Back to Albums </a>
+</div>
