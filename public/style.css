@@ -358,6 +358,7 @@
 }
 
 .artistTable__link {
+	color: black;
 	text-decoration: none;
 }
 
@@ -371,36 +372,37 @@
 
 /* -------------------- Album List CSS -------------------- */
 
-.ablumTable, .ablumTable__header, .ablumTable__data {
+.albumTable, .albumTable__header, .ablbumTable__data {
     border: 2px solid gray;
     text-align: center;
 }
 
-.ablumTable {
+.albumTable {
 	width: 450px;
 	border-collapse: collapse;
 	
 }
 
-.ablumTable__header {
+.albumTable__header {
 	height: 30px;
 	background-color: lightgray;
 }
 
-.ablumTable__data {
+.albumTable__data {
 	padding: 2px;
 	background-color:rgba(255, 255, 255, 0.75);
 }
 
-.ablumTable__link {
+.albumTable__link {
+	color: black;
 	text-decoration: none;
 }
 
-.ablumTable__link:visited {
+.albumTable__link:visited {
 	color: black;
 }
 
-.ablumTable__link:hover {
+.albumTable__link:hover {
 	text-shadow: 0px 0px 2px rgba(100, 100, 100, 1);
 }
 

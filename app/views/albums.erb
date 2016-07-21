@@ -7,7 +7,7 @@
   </tr>
   <% albumarray.each do |album,artist,genre,albumrating| %>
   <tr class="table__row">
-  	<td class="table__data"><a href="/albumdetail?album=<%= album %>&artist=<%= artist %>"><%= album %></a></td>
+  	<td class=" table__data"><a class="albumTable__link" href="/albumdetail?album=<%= album %>&artist=<%= artist %>"><%= album %></a></td>
   	<td class="table__data"><%= artist %></td>
   	<td class="table__data"><%= genre %></td>
   	<td class="table__data rating"><%= albumrating %></td>
