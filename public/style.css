@@ -510,19 +510,19 @@
 
 /* Change background color of links on hover */
 .artistTab li a:hover {
-	background-color: #ddd;
+	background-color: #dddddd;
 }
 
 /* Create an active/current tablink class */
 .artistTab li a:focus, .active {
-	background-color: #ccc;
+	background-color: #cccccc;
 }
 
 /* Style the tab content */
 .tabContent {
     display: none;
     padding: 6px 12px;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
     border-top: none;
     width: 350px;
     justify-content: space-around;
@@ -533,6 +533,8 @@
 
 .similarArtist__image {
 	width: 100px;
+	border: solid 1px black;
+	box-shadow: 2px, 2px, 3px, black;
 }
 
 
