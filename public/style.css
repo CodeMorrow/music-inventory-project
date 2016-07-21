@@ -493,12 +493,12 @@
 }
 
 /* Float the list items side by side */
-.artistTab li {
-	float: left;
+.artistTab__links{
+    float: left;
 }
 
 /* Style the links inside the list items */
-.artistTab li a {
+#artistTab__albums {
     display: inline-block;
     color: black;
     text-align: center;
@@ -506,27 +506,87 @@
     text-decoration: none;
     transition: 0.3s;
     font-size: 17px;
+    float: left;
 }
 
 /* Change background color of links on hover */
-.artistTab li a:hover {
-	background-color: #dddddd;
+#artistTab__albums:hover {
+    background-color: #ddd;
 }
 
 /* Create an active/current tablink class */
-.artistTab li a:focus, .active {
-	background-color: #cccccc;
+#artistTab__albums:focus, .active {
+    background-color: #ccc;
+}
+
+/* Style the links inside the list items */
+#artistTab__tracks {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+    float: left;
+}
+
+/* Change background color of links on hover */
+#artistTab__tracks:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+#artistTab__tracks:focus {
+    background-color: #ccc;
+}
+
+/* Style the links inside the list items */
+#artistTab__artists {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+    float: left;
+}
+
+/* Change background color of links on hover */
+#artistTab__artists:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+#artistTab__artists:focus {
+    background-color: #ccc;
 }
 
 /* Style the tab content */
+
+#topAlbums {
+	visibility: visible;
+}
+
+#topTracks {
+	visibility: hidden;
+}
+
+#similarArtist {
+	visibility: hidden;
+}
+
 .tabContent {
-    display: none;
+    display: flex;
+    position: fixed;
+    top: 58px;
     padding: 6px 12px;
-    border: 1px solid #cccccc;
+    border: 1px solid #ccc;
     border-top: none;
     width: 350px;
-    justify-content: space-around;
     flex-direction: row;
+    justify-content: space-around;
     flex-wrap: wrap;
     font-size: 14px;
 }
