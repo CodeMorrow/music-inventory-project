@@ -57,28 +57,6 @@ window.addEventListener("load", function(){
 
 //------------------------- Artist Tab JS
 
-function openTab(evt, tabName) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
-
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabContent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("artistTab__link");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-
-    // Show the current tab, and add an "active" class to the link that opened the tab
-    document.getElementById(tabName).style.display = "flex";
-    evt.currentTarget.className += " active";
-}
-
-
 window.addEventListener("load", function(){
 
 var albumstab = document.getElementById("artistTab__albums");
@@ -92,6 +70,11 @@ albumstab.addEventListener("click", function(){
   albumstab.style.background = "grey";
   trackstab.style.background = "white";
   artiststab.style.background = "white";
+
+  albumstab.style.color = "white";
+  trackstab.style.color = "black";
+  artiststab.style.color = "black";
+
   albumscontent.style.visibility = "visible";
   trackscontent.style.visibility = "hidden";
   artistscontent.style.visibility = "hidden";
@@ -101,6 +84,11 @@ trackstab.addEventListener("click", function(){
   albumstab.style.background = "white";
   trackstab.style.background = "grey";
   artiststab.style.background = "white";
+
+  albumstab.style.color = "black";
+  trackstab.style.color = "white";
+  artiststab.style.color = "black";
+
   trackscontent.style.visibility = "visible";
   albumscontent.style.visibility = "hidden";
   artistscontent.style.visibility = "hidden";
@@ -110,6 +98,11 @@ artiststab.addEventListener("click", function(){
   albumstab.style.background = "white";
   trackstab.style.background = "white";
   artiststab.style.background = "grey";
+
+  albumstab.style.color = "black";
+  trackstab.style.color = "black";
+  artiststab.style.color = "white";
+
   artistscontent.style.visibility = "visible";
   albumscontent.style.visibility = "hidden";
   trackscontent.style.visibility = "hidden";

@@ -21,7 +21,7 @@
 <% else %>
 
 
-  <h1 id="artistButton"><a href= "<%= @artisturl %>"><%= @artist %></a></h1>
+  <h1><a class="artistTitle" href= "<%= @artisturl %>"><%= @artist %></a></h1>
   
   <div class= "artistBio" id="artistBio__full"><%= @artistbio %></div>
 
@@ -47,9 +47,9 @@
       <% 3.times do |x| %>
   
         <div class= "tabContent__view">
-          <img class="similarArtist__image" src= "<%= @topalbumimages[x] %>">
+          <img class="tabContent__image" src= "<%= @topalbumimages[x] %>">
           <br>
-          <a href= "<%= @topalbumurls[x] %>"><%=   @topalbumnames[x] %></a>
+          <a class ="tabContent__link" href= "<%= @topalbumurls[x] %>"><%=   @topalbumnames[x] %></a>
         </div>
   
       <% end %>
@@ -75,9 +75,9 @@
       <% 3.times do |x| %>
   
         <div class= "tabContent__view">
-          <img class="similarArtist__image" src= "<%= @similarartistimages[x] %>">
+          <img class="tabContent__image" src= "<%= @similarartistimages[x] %>">
           <br>
-          <a href= "<%= @similarartisturls[x] %>"><%=   @similarartistnames[x] %></a>
+          <a class ="tabContent__link" href= "<%= @similarartisturls[x] %>"><%=   @similarartistnames[x] %></a>
         </div>
   
       <% end %>
@@ -102,9 +102,9 @@
       <% 3.times do |x| %>
   
         <div class= "tabContent__view">
-          <img class="similarArtist__image" src= "<%= @toptrackimages[x] %>">
+          <img class="tabContent__image" src= "<%= @toptrackimages[x] %>">
           <br>
-          <a href= "<%= @toptrackurls[x] %>"><%=   @toptracknames[x] %></a>
+          <a class ="tabContent__link" href= "<%= @toptrackurls[x] %>"><%=   @toptracknames[x] %></a>
         </div>
   
       <% end %>
