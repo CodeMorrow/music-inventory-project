@@ -75,9 +75,9 @@ albumstab.addEventListener("click", function(){
   trackstab.style.color = "black";
   artiststab.style.color = "black";
 
-  albumscontent.style.visibility = "visible";
-  trackscontent.style.visibility = "hidden";
-  artistscontent.style.visibility = "hidden";
+  albumscontent.style.display = "flex";
+  trackscontent.style.display = "none";
+  artistscontent.style.display = "none";
 });
 
 trackstab.addEventListener("click", function(){
@@ -89,9 +89,9 @@ trackstab.addEventListener("click", function(){
   trackstab.style.color = "white";
   artiststab.style.color = "black";
 
-  trackscontent.style.visibility = "visible";
-  albumscontent.style.visibility = "hidden";
-  artistscontent.style.visibility = "hidden";
+  trackscontent.style.display = "flex";
+  albumscontent.style.display = "none";
+  artistscontent.style.display = "none";
 });
 
 artiststab.addEventListener("click", function(){
@@ -103,9 +103,9 @@ artiststab.addEventListener("click", function(){
   trackstab.style.color = "black";
   artiststab.style.color = "white";
 
-  artistscontent.style.visibility = "visible";
-  albumscontent.style.visibility = "hidden";
-  trackscontent.style.visibility = "hidden";
+  artistscontent.style.display = "flex";
+  albumscontent.style.display = "none";
+  trackscontent.style.display = "none";
 });
 
 
