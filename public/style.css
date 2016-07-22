@@ -662,6 +662,10 @@
 
 }
 
+.trackList__list {
+	list-style-type: none;
+}
+
 /* -------------------- Back Arrow CSS -------------*/
 
 .backArrow__layout{

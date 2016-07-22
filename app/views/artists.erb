@@ -1,6 +1,8 @@
-<div class ="backArrow__layout">
-  <a href="/artists"><img class="backArrow" src="images/back_arrow.png"></a>
-</div>
+<% if @artist != nil %>
+  <div class ="backArrow__layout">
+    <a href="/artists"><img class="backArrow" src="images/back_arrow.png"></a>
+  </div>
+<% end %>  
 
 <% if @artist == nil %>
   <table class="artistTable">

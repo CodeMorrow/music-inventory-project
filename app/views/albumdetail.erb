@@ -16,7 +16,7 @@
 	    <% end %>
 		<div class ="trackList">
 			<b>Track List</b>
-			<ul>
+			<ul class="trackList__list">
 				<% z=1 %>
 				<% @tracklist.each do |i| %>
 					<li><%= z.to_s + "." %> <%= @tracklist[z-1] %> </li>
