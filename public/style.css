@@ -406,7 +406,7 @@
 	text-shadow: 0px 0px 2px rgba(100, 100, 100, 1);
 }
 
- /*-------------------- Similar Artist CSS --------------------
+ /*-------------------- Similar Artist CSS -------------------- 
 
 #artistButton {
 	cursor: pointer;
@@ -420,7 +420,7 @@
 }
 
 #similarArtists {
-	visibility: hidden;
+	/*visibility: hidden;*/
 
 	 /*some styles to position the modal at the center of the page 
     position: fixed;
@@ -441,11 +441,11 @@
     z-index: 10;  /*keep on top of other elements on the page 
     outline: 9999px solid rgba(0,0,0,0.5);
 }
-
+*/
 #errorMessage {
 	visibility: hidden;
 
-	/* some styles to position the modal at the center of the page 
+	/* some styles to position the modal at the center of the page */
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -459,8 +459,8 @@
     border: solid 1px black;
     box-shadow: 2px 2px 2px black;
   
-    /* needed styles for the overlay 
-    z-index: 10; /* keep on top of other elements on the page 
+    /* needed styles for the overlay */
+    z-index: 10; /* keep on top of other elements on the page */
     outline: 9999px solid rgba(0,0,0,0.5);
 }
 
@@ -478,8 +478,8 @@
     top: 25%;
     left: 35%;
 
-	   /* needed styles for the overlay 
-    z-index: 10; /* keep on top of other elements on the page 
+	   /* needed styles for the overlay */
+    z-index: 10; /* keep on top of other elements on the page */
     outline: 9999px solid rgba(0,0,0,0.5);
 }
 /* ------------------------------- Artist info Tabs ---------------- */
