@@ -86,16 +86,16 @@ def returnAlbums(arraytosearch)
       @albumline = [album,artist,genre,albumrating]
       @albumarray.push(@albumline)
   end
-  return @albumarray
+  return @albumarray.uniq
 end
 
 def returnArtists(arraytosearch)
-  @albumarray = Array.new
+  @artistarray = Array.new
   arraytosearch.each do |title,artist,album,genre,minutes,seconds,songrating,albumrating|
-      @albumline = [artist,album,genre]
-      @albumarray.push(@albumline)
+      @artistline = artist
+      @artistarray.push(@artistline)
   end
-  return @albumarray
+  return @artistarray.uniq
 end
 
 
