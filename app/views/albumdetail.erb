@@ -9,20 +9,23 @@
     	<div class ="albumTitle"> <%= @album_ttl %> </div>
 
 	    <div class ="albumArtist"><%= @album_artist %></div>
-	    
+
+<div class="albumCover">    
 	    <div class ="albumUrl"><a href=<%= @album_url %> target="_blank"><img class="albumDisplay__img" src=<%= @album_img %>></a></div>
 
-    <% end %>
-	<div class ="trackList">
-		<b>Track List</b>
-		<ul>
-			<% z=1 %>
-			<% @tracklist.each do |i| %>
-				<li><%= z.to_s + "." %> <%= @tracklist[z-1] %> </li>
-				<% z=z+1 %>
-			<% end %>
-		</ul>
-	</div>
+	    <% end %>
+		<div class ="trackList">
+			<b>Track List</b>
+			<ul>
+				<% z=1 %>
+				<% @tracklist.each do |i| %>
+					<li><%= z.to_s + "." %> <%= @tracklist[z-1] %> </li>
+					<% z=z+1 %>
+				<% end %>
+			</ul>
+		</div>
+</div>
+
 </div>
 
 <div class ="">

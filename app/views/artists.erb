@@ -1,3 +1,7 @@
+<div class ="backArrow__layout">
+  <a href="/artists"><img class="backArrow" src="images/back_arrow.png"></a>
+</div>
+
 <% if @artist == nil %>
   <table class="artistTable">
     <tr class="artistTable__row">
@@ -29,7 +33,6 @@
   <% if @artistinfo["error"] == 6 %>
     <div id = "errorMessage">
     <div class="errorMessage">We're sorry, there were no similar artist found.</div>
-    <div class= "backbutton"><a href= "/artists">Back to Artist List Page</a></div>
   </div>
 
 <% else %>
@@ -45,7 +48,6 @@
 
     <% end %>
 
-    <div class= "backbutton"><a href= "/artists">Back to Artist List Page</a></div>
   </div>
 
 <% end %>
@@ -56,7 +58,6 @@
 
   <div id = "errorMessage">
     <div class="errorMessage">We're sorry, there were no similar artist found.</div>
-    <div class= "backbutton"><a href= "/artists">Back to Artist List Page</a></div>
   </div>
 
 <% else %>
@@ -72,7 +73,6 @@
 
     <% end %>
 
-    <div class= "backbutton"><a href= "/artists">Back to Artist List Page</a></div>
   </div>
 
 <% end %>
@@ -83,7 +83,6 @@
 
   <div id = "errorMessage">
     <div class="errorMessage">We're sorry, there were no similar artist found.</div>
-    <div class= "backbutton"><a href= "/artists">Back to Artist List Page</a></div>
   </div>
 
 <% else %>
@@ -99,7 +98,6 @@
 
     <% end %>
 
-    <div class= "backbutton"><a href= "/artists">Back to Artist List Page</a></div> 
   </div>
 
   <% end %>

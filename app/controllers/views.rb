@@ -71,6 +71,9 @@ MyApp.get "/artists" do
 	@toptracknames = topTrackNames(@toptracksarray)
 	@toptrackimages = topTrackImages(@toptracksarray)
 
+	# @artistBioPreview = @artistbio.slice(0, 220);
+	# @artistBioFull = @artistbio.slice(220, @artistbio.length);
+
 	erb :"/artists", :locals => {'artistarray' => artistarray}
 end
 
@@ -83,8 +86,8 @@ MyApp.post "/artists" do
 
 	erb :"/searchresults", :locals => {'searchresult' => searchresult}
 	
-	@artistBioPreview = @artistbio.slice(0, 220);
-	@artistBioFull = @artistbio.slice(220);
+	# @artistBioPreview = @artistbio.slice(0, 220);
+	# @artistBioFull = @artistbio.slice(220, @artistbio.length);
 end
 
 
