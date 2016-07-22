@@ -10,6 +10,15 @@ MyApp.get "/songs" do
  	erb :"/songs", :locals => {'x' => x}
 end
 
+MyApp.post "/songs" do
+	@search = params[:searchParam]
+	@arraytosearch = arrayToSearch()
+
+	searchresult = searchResult(@search,@arraytosearch)	
+
+	erb :"/searchresults", :locals => {'searchresult' => searchresult}
+end
+
 
 MyApp.get "/albums" do
 	arraytosearch = arrayToSearch()
@@ -17,17 +26,6 @@ MyApp.get "/albums" do
 
 	erb :"/albums"
 end
-
-
-MyApp.post "/albums" do
-	@albumsearch = params[:albumSearchParam]
-	@arraytosearch = arrayToSearch()
-
-	searchresult = searchResult(@albumsearch,@arraytosearch)	
-
-	erb :"/searchresults", :locals => {'searchresult' => searchresult}
-end
-
 
 MyApp.get "/albumdetail" do
 	@album = params[:album]
@@ -76,14 +74,14 @@ MyApp.get "/artists" do
 end
 
 
-MyApp.post "/artists" do
-	@artistsearch = params[:artistSearchParam]
+MyApp.get "/songsbyartist" do
+	arraytosearch = arrayToSearch()
+	@search = params[:artist]
 	@arraytosearch = arrayToSearch()
 
-	searchresult = searchResult(@artistsearch,@arraytosearch)
+	@searchresult = searchResult(@search,@arraytosearch)
 
-	erb :"/searchresults", :locals => {'searchresult' => searchresult}
-
+	erb :"/songs_by_artist"
 end
 
 
