@@ -22,12 +22,13 @@
 
 .contentContainer {
 	display: flex;
+	flex: 1;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
 	border: solid 3px gray;
 	border-radius: 0 0 20px 20px;
-	min-height: 85vh;
+	min-height: 800px;
 	padding: 10px;
 	background-image: url("images/homepage_background.jpg");
 	background-size: cover;
@@ -450,15 +451,15 @@
 /* ------------------------------- Artist info Tabs ---------------- */
 
 #topAlbums {
-	visibility: hidden;
+	display: none;
 }
 
 #similarArtists{
-	visibility: hidden;
+	display: none;
 }
 
 #topTracks{
-	visibility: hidden;
+	display: none;
 }
 
 .artistTab {
@@ -482,7 +483,6 @@
 }
 
 .tabContent{
-	display: flex;
 	flex-flow: row;
 	position: absolute;
 	left: 50vw;
