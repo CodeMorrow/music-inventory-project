@@ -1,5 +1,5 @@
 
-#
+# Function to obtain album data from last.fm API.
 #
 # artist, album - provides the artist name and ablum title from the songs table using query string parameters.
 #
@@ -9,11 +9,11 @@ def getAlbumInfo(artist,album)
 end
 
 
+# Function is used to navigate to an album page on the last.fm website.
 #
+# albumdata - Variable contains a hash of data from the last.fm API for a specific album.
 #
-#
-#
-#
+# Returns a string containing the URL for a specific album.
 def getAlbumUrl(albumdata)
 	if albumdata["error"] == 6
 	else
@@ -22,11 +22,11 @@ def getAlbumUrl(albumdata)
 end
 
 
+# Function is used to grab an album image.
 #
+# albumdata - Variable contains a hash of data from the last.fm API for a specific album.
 #
-#
-#
-#
+# Returns a string containing the URL for the image of a specific album cover.
 def getAlbumImage(albumdata)
 	if albumdata["error"] == 6
 	else
@@ -35,43 +35,21 @@ def getAlbumImage(albumdata)
 end
 
 
+# Function provides a list of tracks for a specific album.
 #
+# albumdata - Variable contains a hash of data from the last.fm API for a specific album.
 #
-#
-#
-#
-def getAlbumArtist(albumdata)
+# Returns an array of strings (where each element represents a song name) for a specific album.
+def getAlbumTracks(albumdata)
 	if albumdata["error"] == 6
 	else
-		albumdata["album"]["artist"]
-	end
-end
-
-
-#
-#
-#
-#
-#
-def getAlbumTitle(albumdata)
-	if albumdata["error"] == 6
-	else
-		albumdata["album"]["name"]
-	end
-end
-
-
-#
-#
-#
-#
-#
-def getAlbumTracks(trackarray)
-	b = []
-	z = 0
-	trackarray.each do |i|
-		b.push(trackarray[z]["name"])
-	    z=z+1
+		trackarray = albumdata["album"]["tracks"]["track"]
+		b = []
+		z = 0
+		trackarray.each do |i|
+			b.push(trackarray[z]["name"])
+		    z=z+1
+		end
 	end
 	return b
 end

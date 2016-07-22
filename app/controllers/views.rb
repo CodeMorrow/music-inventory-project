@@ -36,12 +36,9 @@ MyApp.get "/albumdetail" do
 
 	@album_url = getAlbumUrl(@albumdata)
 	@album_img = getAlbumImage(@albumdata)
-	@album_ttl = getAlbumTitle(@albumdata)
 	@error_msg = "Album not found."
-	@album_artist = getAlbumArtist(@albumdata)
 
-	@trackarray = @albumdata["album"]["tracks"]["track"]
-	@tracklist = getAlbumTracks(@trackarray)
+	@tracklist = getAlbumTracks(@albumdata)
 
 	erb :"/albumdetail"
 end
