@@ -406,7 +406,7 @@
 	text-shadow: 0px 0px 2px rgba(100, 100, 100, 1);
 }
 
- /*-------------------- Similar Artist CSS -------------------*/
+ /*-------------------- Error Message CSS -------------------*/
 #errorMessage {
 	visibility: hidden;
 
@@ -500,7 +500,40 @@
 
 /* ------------------- Artist Bio Style --------------- */
 
+.artistSongButton {
+	margin: 5px;
+	padding: 5px;
+	border: solid 1px gray;
+	border-radius: 5px;
+	background-color: lightgray;
+	box-shadow: 2px 2px 5px #888888;
+	text-decoration: none;
+	color: black;
+}
+
+.artistSongButton:visited {
+	padding: 5px;
+	border: solid 1px gray;
+	border-radius: 5px;
+	background-color: lightgray;
+	box-shadow: 2px 2px 5px #888888;
+	text-decoration: none;
+	color: black;
+}
+
+.artistSongButton:hover {
+	border: solid 1px black;
+}
+
+.artistSongButton:active {
+	background-color: lightgray;
+	color: black;
+	box-shadow: inset 2px 2px 5px #888888;
+	border: solid 1px gray;
+}
+
 .artistBio {
+	margin-top: 30px;
 	width: 600px;
 	background-color:rgba(255, 255, 255, 0.75);
 }
