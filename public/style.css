@@ -406,7 +406,7 @@
 	text-shadow: 0px 0px 2px rgba(100, 100, 100, 1);
 }
 
-/* -------------------- Similar Artist CSS -------------------- */
+ /*-------------------- Similar Artist CSS --------------------
 
 #artistButton {
 	cursor: pointer;
@@ -422,7 +422,7 @@
 #similarArtists {
 	visibility: hidden;
 
-	/* some styles to position the modal at the center of the page */
+	 /*some styles to position the modal at the center of the page 
     position: fixed;
     display: flex;
     justify-content: center;
@@ -437,15 +437,15 @@
     border: solid 1px black;
     box-shadow: 2px 2px 2px black;
   
-    /* needed styles for the overlay */
-    z-index: 10; /* keep on top of other elements on the page */
+     /*needed styles for the overlay 
+    z-index: 10;  /*keep on top of other elements on the page 
     outline: 9999px solid rgba(0,0,0,0.5);
 }
 
 #errorMessage {
 	visibility: hidden;
 
-	/* some styles to position the modal at the center of the page */
+	/* some styles to position the modal at the center of the page 
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -459,8 +459,8 @@
     border: solid 1px black;
     box-shadow: 2px 2px 2px black;
   
-    /* needed styles for the overlay */
-    z-index: 10; /* keep on top of other elements on the page */
+    /* needed styles for the overlay 
+    z-index: 10; /* keep on top of other elements on the page 
     outline: 9999px solid rgba(0,0,0,0.5);
 }
 
@@ -478,13 +478,13 @@
     top: 25%;
     left: 35%;
 
-	   /* needed styles for the overlay */
-    z-index: 10; /* keep on top of other elements on the page */
+	   /* needed styles for the overlay 
+    z-index: 10; /* keep on top of other elements on the page 
     outline: 9999px solid rgba(0,0,0,0.5);
 }
 /* ------------------------------- Artist info Tabs ---------------- */
 
-/* Style the list */
+/* Style the list 
 .artistTab {
     list-style-type: none;
     margin: 0;
@@ -494,12 +494,12 @@
     background-color: #f1f1f1;
 }
 
-/* Float the list items side by side */
+/* Float the list items side by side 
 .artistTab__links{
     float: left;
 }
 
-/* Style the links inside the list items */
+/* Style the links inside the list items 
 #artistTab__albums {
     display: inline-block;
     color: black;
@@ -511,17 +511,17 @@
     float: left;
 }
 
-/* Change background color of links on hover */
+/* Change background color of links on hover 
 #artistTab__albums:hover {
     background-color: #ddd;
 }
 
-/* Create an active/current tablink class */
+/* Create an active/current tablink class 
 #artistTab__albums:focus, .active {
     background-color: #ccc;
 }
 
-/* Style the links inside the list items */
+/* Style the links inside the list items 
 #artistTab__tracks {
     display: inline-block;
     color: black;
@@ -533,17 +533,17 @@
     float: left;
 }
 
-/* Change background color of links on hover */
+/* Change background color of links on hover 
 #artistTab__tracks:hover {
     background-color: #ddd;
 }
 
-/* Create an active/current tablink class */
+/* Create an active/current tablink class 
 #artistTab__tracks:focus {
     background-color: #ccc;
 }
 
-/* Style the links inside the list items */
+/* Style the links inside the list items 
 #artistTab__artists {
     display: inline-block;
     color: black;
@@ -555,28 +555,28 @@
     float: left;
 }
 
-/* Change background color of links on hover */
+/* Change background color of links on hover 
 #artistTab__artists:hover {
     background-color: #ddd;
 }
 
-/* Create an active/current tablink class */
+/* Create an active/current tablink class 
 #artistTab__artists:focus {
     background-color: #ccc;
 }
 
-/* Style the tab content */
+/* Style the tab content 
 
 #topAlbums {
 	visibility: visible;
 }
 
 #topTracks {
-	visibility: hidden;
+	visibility: visible;
 }
 
 #similarArtist {
-	visibility: hidden;
+	visibility: visible;
 }
 
 .tabContent {
@@ -597,8 +597,75 @@
 	border: solid 1px black;
 	box-shadow: 10px, 10px, 10px, black;
 }
-/* ------------------- Artist Bio Style ---------------*/
+/* ------------------- Artist Bio Style ---------------
 .artistBio {
 	width: 600px;
 	background-color:rgba(255, 255, 255, 0.75);
 }
+
+*/
+
+#topAlbums {
+	visibility: hidden;
+}
+
+#similarArtists{
+	visibility: hidden;
+}
+
+#topTracks{
+	visibility: hidden;
+}
+
+.artistTab {
+	display: flex;
+	flex-flow: row;
+	margin: 30px 0px 0px 0px;
+	border-top: 3px ridge grey;
+	border-right: 3px ridge grey;
+	border-bottom: 3px ridge grey;
+	border-radius: 5px;
+}
+
+.artistTab a {
+	text-decoration: none;
+	color: black;
+}
+
+.tab {
+	padding: 10px;
+	border-left: 3px ridge grey;
+}
+
+.tabContent{
+	display: flex;
+	flex-flow: row;
+	position: absolute;
+	left: 50vw;
+	transform: translate(-50%, 0%);
+	margin-top: 25px;
+	border: 3px ridge grey;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.backbutton {
+	position: absolute;
+	bottom: 10vh;
+	left: 50vw;
+	transform: translate(-50%, 0%);
+	border: 3px ridge grey;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.backbutton a {
+	text-decoration: none;
+	color: black;
+}
+
+
+
+
+
+

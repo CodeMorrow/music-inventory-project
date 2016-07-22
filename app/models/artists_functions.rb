@@ -107,7 +107,7 @@ end
 
 def artistInfoBio(artistinfo)
 	if artistinfo["error"] != 6
-		artistinfo["artist"]["bio"]["content"]
+		artistinfo["artist"]["bio"]["summary"]
 	end
 end
 

@@ -79,4 +79,45 @@ function openTab(evt, tabName) {
 }
 
 
+window.addEventListener("load", function(){
+
+var albumstab = document.getElementById("artistTab__albums");
+var trackstab = document.getElementById("artistTab__tracks");
+var artiststab = document.getElementById("artistTab__artists");
+var albumscontent = document.getElementById("topAlbums");
+var trackscontent = document.getElementById("topTracks");
+var artistscontent = document.getElementById("similarArtists");
+
+albumstab.addEventListener("click", function(){
+  albumstab.style.background = "grey";
+  trackstab.style.background = "white";
+  artiststab.style.background = "white";
+  albumscontent.style.visibility = "visible";
+  trackscontent.style.visibility = "hidden";
+  artistscontent.style.visibility = "hidden";
+});
+
+trackstab.addEventListener("click", function(){
+  albumstab.style.background = "white";
+  trackstab.style.background = "grey";
+  artiststab.style.background = "white";
+  trackscontent.style.visibility = "visible";
+  albumscontent.style.visibility = "hidden";
+  artistscontent.style.visibility = "hidden";
+});
+
+artiststab.addEventListener("click", function(){
+  albumstab.style.background = "white";
+  trackstab.style.background = "white";
+  artiststab.style.background = "grey";
+  artistscontent.style.visibility = "visible";
+  albumscontent.style.visibility = "hidden";
+  trackscontent.style.visibility = "hidden";
+});
+
+
+
+
+})
+
 

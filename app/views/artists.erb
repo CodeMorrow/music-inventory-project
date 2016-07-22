@@ -17,90 +17,99 @@
 
   <h1 id="artistButton"><a href= "<%= @artisturl %>"><%= @artist %></a></h1>
   
-  <div class= "artistBio" id="artistBio__preview"><%= @artistBioPreview %></div>
-  <div class= "artistBio" id="artistBio__full"><%= @artistBioFull %></div>
+  <div class= "artistBio" id="artistBio__full"><%= @artistbio %></div>
 
-  <ul class="artistTab">
-    <li id="artistTab__albums">Top Albums</li>
-    <li id="artistTab__tracks">Top Tracks</li>
-    <li id="artistTab__artists">Similar Artists</li>
-  </ul>
+  <div class="artistTab">
+    <a href= "#"><div class= "tab" id="artistTab__albums">Top Albums</div></a>
+    <a href= "#"><div class= "tab" id="artistTab__tracks">Top Tracks</div></a>
+    <a href= "#"><div class= "tab" id="artistTab__artists">Similar Artists</div></a>
+  </div>
+
+<!-- Begin hidden page content -->
+
+<!------------------- Top Albums Tab ------------------>
   
-  <% if @artistinfo["error"] == 6 %>
+  <% if @topalbumsarray["error"] == 6 %>
     <div id = "errorMessage">
     <div class="errorMessage">We're sorry, there were no similar artist found.</div>
     <div class= "backbutton"><a href= "/artists">Back to Artist List Page</a></div>
   </div>
 
-<% else %>
+  <% else %>
 
-  <div id= "topAlbums" class= "tabContent">
-
-    <% 3.times do |x| %>
-
-      <div class= "tabContent__view">
-        <img class="similarArtist__image" src= "<%= @topalbumimages[x] %>">
-        <a href= "<%= @topalbumurls[x] %>"><%=   @topalbumnames[x] %></a>
-      </div>
-
-    <% end %>
-
-    <div class= "backbutton"><a href= "/artists">Back to Artist List Page</a></div>
-  </div>
-
-<% end %>
-
-<!--              Top Album Tab           -->
-
-<% if @topalbumsarray["error"] == 6 %>
-
-  <div id = "errorMessage">
-    <div class="errorMessage">We're sorry, there were no similar artist found.</div>
-    <div class= "backbutton"><a href= "/artists">Back to Artist List Page</a></div>
-  </div>
-
-<% else %>
-
-<div id= "similarArtist" class= "tabContent">
+      <div id= "topAlbums" class= "tabContent">
   
-    <% 3.times do |x| %>
+      <% 3.times do |x| %>
+  
+        <div class= "tabContent__view">
+          <img class="similarArtist__image" src= "<%= @topalbumimages[x] %>">
+          <br>
+          <a href= "<%= @topalbumurls[x] %>"><%=   @topalbumnames[x] %></a>
+        </div>
+  
+      <% end %>
+  
+    </div>
+  
+  <% end %>
 
-      <div class= "tabContent__view">
-        <img class="similarArtist__image" src= "<%= @similarartistimages[x] %>">
-        <a href= "<%= @similarartisturls[x] %>"><%=   @similarartistnames[x] %></a>
-      </div>
+<!------------------- Similar Artists Tab ------------------>
 
-    <% end %>
 
-    <div class= "backbutton"><a href= "/artists">Back to Artist List Page</a></div>
-  </div>
+  <% if @artistinfo["error"] == 6 %>
+  
+    <div id = "errorMessage">
+      <div class="errorMessage">We're sorry, there were no similar artist found.</div>
+      <div class= "backbutton"><a href= "/artists">Back to Artist List Page</a></div>
+    </div>
+  
+  <% else %>
+  
+  <div id= "similarArtists" class= "tabContent">
+    
+      <% 3.times do |x| %>
+  
+        <div class= "tabContent__view">
+          <img class="similarArtist__image" src= "<%= @similarartistimages[x] %>">
+          <br>
+          <a href= "<%= @similarartisturls[x] %>"><%=   @similarartistnames[x] %></a>
+        </div>
+  
+      <% end %>
+  
+    </div>
+  
+  <% end %>
 
-<% end %>
+<!------------------- Top Tracks Tab ------------------>
 
-<!--              Top Tracks Tab          -->
-
-<% if @toptracksarray["error"] == 6 %>
-
-  <div id = "errorMessage">
-    <div class="errorMessage">We're sorry, there were no similar artist found.</div>
-    <div class= "backbutton"><a href= "/artists">Back to Artist List Page</a></div>
-  </div>
-
-<% else %>
-
-  <div id= "topTracks" class= "tabContent">
-
-    <% 3.times do |x| %>
-
-      <div class= "tabContent__view">
-        <img class="similarArtist__image" src= "<%= @toptrackimages[x] %>">
-        <a href= "<%= @toptrackurls[x] %>"><%=   @toptracknames[x] %></a>
-      </div>
-
+  <% if @toptracksarray["error"] == 6 %>
+  
+    <div id = "errorMessage">
+      <div class="errorMessage">We're sorry, there were no similar artist found.</div>
+      <div class= "backbutton"><a href= "/artists">Back to Artist List Page</a></div>
+    </div>
+  
+  <% else %>
+  
+    <div id= "topTracks" class= "tabContent">
+  
+      <% 3.times do |x| %>
+  
+        <div class= "tabContent__view">
+          <img class="similarArtist__image" src= "<%= @toptrackimages[x] %>">
+          <br>
+          <a href= "<%= @toptrackurls[x] %>"><%=   @toptracknames[x] %></a>
+        </div>
+  
+      <% end %>
+  
+    </div>
+  
     <% end %>
 
     <div class= "backbutton"><a href= "/artists">Back to Artist List Page</a></div> 
-  </div>
 
-  <% end %>
-<% end %>
+ <% end %>
+
+ 
