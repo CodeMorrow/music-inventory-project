@@ -602,3 +602,57 @@
 	width: 600px;
 	background-color:rgba(255, 255, 255, 0.75);
 }
+
+
+/* ------------------ Album Detail CCS ----------------*/
+
+.albumView {
+	display: flex;
+	flex-direction: column;
+}
+
+.albumTitle {
+	margin-bottom: 5px;
+	display: flex;
+	justify-content: center;
+	font-size: 32px;
+	font-weight: bold;
+}
+
+.albumArtist {
+	display: flex;
+	margin-bottom: 20px;
+	justify-content: center;
+}
+
+.albumUrl {
+	display: flex;
+	justify-content: center;
+}
+
+.albumDisplay__img {
+	display: flex;
+	justify-content: center;
+	border: solid 2px black;
+}
+
+.trackList {
+	width:auto;
+	padding: 15px;
+	margin: 25px 0;
+	border: solid 3px black;
+	background-color: rgba(255,255,255,0.75);
+
+}
+
+/* -------------------- Back Arrow CSS -------------*/
+
+.backArrow__layout{
+	display: flex;
+	align-self: flex-start;
+	justify-content: flex-start;
+	margin-left: 30px;
+}
+.backArrow {
+	width: 32px;
+}
