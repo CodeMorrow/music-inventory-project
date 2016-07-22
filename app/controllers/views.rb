@@ -13,9 +13,9 @@ end
 
 MyApp.get "/albums" do
 	arraytosearch = arrayToSearch()
-	albumarray = returnAlbums(arraytosearch)
+	@albumarray = returnAlbums(arraytosearch)
 
-	erb :"/albums", :locals => {'albumarray' => albumarray}
+	erb :"/albums"
 end
 
 
@@ -49,8 +49,8 @@ end
 
 MyApp.get "/artists" do
 	arraytosearch = arrayToSearch()
-	artistarray = returnArtists(arraytosearch)
-
+	@artistarray = returnArtists(arraytosearch)
+	# binding.pry
 	@artist = params[:artist]
 
 	@artistinfo = artistInfo(@artist)
@@ -74,7 +74,7 @@ MyApp.get "/artists" do
 	# @artistBioPreview = @artistbio.slice(0, 220);
 	# @artistBioFull = @artistbio.slice(220, @artistbio.length);
 
-	erb :"/artists", :locals => {'artistarray' => artistarray}
+	erb :"/artists"
 end
 
 

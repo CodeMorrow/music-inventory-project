@@ -9,7 +9,7 @@
     <tr class="artistTable__row">
       <th class="artistTable__header">Artist</th> 
     </tr>
-    <% artistarray.each do |artist,album,genre| %>
+    <% @artistarray.each do |artist| %>
     <tr class="artistTable__row">
     	<td id="artistButton" class="artistTable__data"><a class="artistTable__link" href= "?artist=<%= artist %>"><%= artist %></a></td>
     </tr>
