@@ -1,29 +1,33 @@
-<div class ="" style="display: flex;">
+<div class ="backArrow__layout">
+	<a href="/albums"><img class="backArrow" src="images/back_arrow.png"></a>
+</div>
+
+<div class ="albumView">
     <%if @albumdata["error"] == 6 %>
         <h2> <%= @error_msg %> </h2>
     <% else %>
-		<div class="">
-	    	<div class =""><b> <%= @album_artist %> </b> </div>
-			<div class =""> <%= @album_ttl %> </div>
-	    	<div class =""><a href=<%= @album_url %> target="_blank"><img src=<%= @album_img %>></a></div>
+    	<div class ="albumTitle"> <%= @album_ttl %> </div>
+
+	    <div class ="albumArtist"><%= @album_artist %></div>
+
+<div class="albumCover">    
+	    <div class ="albumUrl"><a href=<%= @album_url %> target="_blank"><img class="albumDisplay__img" src=<%= @album_img %>></a></div>
+
+	    <% end %>
+		<div class ="trackList">
+			<b>Track List</b>
+			<ul class="trackList__list">
+				<% z=1 %>
+				<% @tracklist.each do |i| %>
+					<li><%= z.to_s + "." %> <%= @tracklist[z-1] %> </li>
+					<% z=z+1 %>
+				<% end %>
+			</ul>
 		</div>
-    <% end %>
-	<div class ="">
-		<b>Track List</b>
-		<ul>
-			<% z=1 %>
-			<% @tracklist.each do |i| %>
-				<li><%= z.to_s + "." %> <%= @tracklist[z-1] %> </li>
-				<% z=z+1 %>
-			<% end %>
-		</ul>
-	</div>
+</div>
+
 </div>
 
 <div class ="">
 	<a href=<%= @album_url %> target="_blank"> More album info at last.fm </a>
-</div>
-
-<div class ="">
-	<a href="/albums"> Back to Albums </a>
 </div>
